@@ -109,7 +109,7 @@ export const HeroSection: React.FC = () => {
                   About Me
                 </Link>
                 <a
-                  href="/resume.pdf"
+                  href="/Sri_Harsha_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   download="Sri_Harsha_Resume.pdf"

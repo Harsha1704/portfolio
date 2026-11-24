@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
             </a>
             <span className="text-slate-300">•</span>
             <a
-              href="/resume.pdf"
+              href="/Sri_Harsha_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-slate-900 transition-colors"

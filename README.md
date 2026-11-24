@@ -102,7 +102,7 @@ The application is pre-configured for Vercel deployment with [vercel.json](verce
 
 - **GitHub:** [@Harsha1704](https://github.com/Harsha1704)
 - **LinkedIn:** [sriharsha-jilla](https://linkedin.com/in/sriharsha-jilla/)
-- **Resume (PDF):** Available directly via `/resume.pdf`
+- **Resume (PDF):** Available directly via `/Sri_Harsha_Resume.pdf`
 
 ---
 
