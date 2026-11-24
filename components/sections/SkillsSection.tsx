@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import Link from "next/link";
 import {
   Brain,
   Cpu,
@@ -14,6 +15,7 @@ import {
   X,
   Layers,
   CheckCircle2,
+  ArrowUpRight,
 } from "lucide-react";
 import { skillClustersData } from "@/data/skills";
 import { Section } from "@/components/ui/Section";
@@ -328,9 +330,25 @@ export const SkillsSection: React.FC = () => {
                           </span>
                         </div>
                         {skill.evidence && (
-                          <p className="text-[11px] text-slate-500 leading-relaxed">
+                          <p className="text-[11px] text-slate-500 leading-relaxed mb-2">
                             {skill.evidence}
                           </p>
+                        )}
+                        {skill.projects && skill.projects.length > 0 && (
+                          <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-slate-200/60">
+                            <span className="text-[10px] font-mono font-medium text-slate-400">Used in:</span>
+                            {skill.projects.map((proj) => (
+                              <Link
+                                key={proj.slug}
+                                href={`/projects/${proj.slug}`}
+                                className="inline-flex items-center gap-0.5 text-[10px] font-semibold text-blue-700 bg-blue-50/90 hover:bg-blue-100 hover:text-blue-900 px-1.5 py-0.5 rounded border border-blue-200/70 transition-colors"
+                                title={`View ${proj.title} case study`}
+                              >
+                                <span>{proj.title}</span>
+                                <ArrowUpRight className="w-2.5 h-2.5" />
+                              </Link>
+                            ))}
+                          </div>
                         )}
                       </div>
                     );

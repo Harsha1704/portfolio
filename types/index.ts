@@ -94,12 +94,18 @@ export interface Project {
 
 export type SkillProficiencyTier = "proficient" | "working_knowledge" | "familiar";
 
+export interface SkillProjectRef {
+  slug: string;
+  title: string;
+}
+
 export interface Skill {
   name: string;
   tier: SkillProficiencyTier;
   tierLabel: string;
   evidence?: string;
   keywords?: string[];
+  projects?: SkillProjectRef[];
 }
 
 export interface SkillCluster {
@@ -107,6 +113,11 @@ export interface SkillCluster {
   title: string;
   iconName: string;
   skills: Skill[];
+}
+
+export interface ExperienceResponsibilityGroup {
+  area: string;
+  points: string[];
 }
 
 export interface ExperienceItem {
@@ -118,7 +129,9 @@ export interface ExperienceItem {
   type: string;
   summary: string;
   bullets: string[];
+  responsibilityGroups?: ExperienceResponsibilityGroup[];
   technologies: string[];
+  certificateUrl?: string;
   confidentialityNote?: string;
 }
 

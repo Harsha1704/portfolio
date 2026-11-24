@@ -24,6 +24,8 @@ export const achievementsData: AchievementItem[] = [
     description:
       "Competed in HackerRank's competitive engineering challenge, solving timed algorithmic problems under strict automated test-case evaluation and performance constraints.",
     badges: ["Rank 1,716 / 3,062", "Global Contest", "Timed Algorithms"],
+    link: "https://drive.google.com/file/d/1vjLqezZOCzoNliLACoWCoX8tLcgvtq64/view?usp=sharing",
+    linkText: "View Contest Certificate",
     details: [
       "Evaluated on algorithmic correctness, asymptotic time efficiency, and memory constraints under timed contest conditions.",
       "Benchmarked competitively against 3,000+ software engineering students and developers internationally.",
@@ -53,6 +55,8 @@ export const achievementsData: AchievementItem[] = [
     description:
       "Collaborative engineering sprint building a functional technical prototype within strict time limits, judged by an expert panel on technical architecture, originality, and live execution.",
     badges: ["8th / 50 Teams", "Competitive Sprint", "Rapid Prototyping", "Technical Architecture"],
+    link: "https://drive.google.com/file/d/1_KlfowWZ-hMKm444cUo_0XkWloPS4UBI/view?usp=sharing",
+    linkText: "View Hackathon Certificate",
     details: [
       "Co-developed an end-to-end technical prototype from conception to working demo within tight hackathon timeframes.",
       "Secured 8th place finish among 50 competing university engineering teams.",

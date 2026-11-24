@@ -12,6 +12,12 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Primary language for AI/ML pipelines, Flask backends, and algorithmic problem solving (HackerRank 4-Star).",
         keywords: ["python", "numpy", "pandas", "oop", "backend"],
+        projects: [
+          { slug: "trafficshield", title: "TrafficShield" },
+          { slug: "resumematch-ai", title: "ResumeMatch AI" },
+          { slug: "moodmate", title: "MoodMate" },
+          { slug: "satquery-ai", title: "SatQuery AI" }
+        ]
       },
       {
         name: "Java",
@@ -54,6 +60,10 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Supervised and unsupervised learning, classification, regression, and cross-validation pipelines (ResumeMatch AI, Edufiy).",
         keywords: ["ml", "machine learning", "supervised", "classification", "scikit-learn"],
+        projects: [
+          { slug: "trafficshield", title: "TrafficShield" },
+          { slug: "resumematch-ai", title: "ResumeMatch AI" }
+        ]
       },
       {
         name: "Scikit-learn",
@@ -61,6 +71,10 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Calibrated Logistic Regression, TF-IDF vectorization pipelines, and model evaluation metrics (ResumeMatch AI).",
         keywords: ["scikit-learn", "sklearn", "logistic regression", "tfidf", "python"],
+        projects: [
+          { slug: "trafficshield", title: "TrafficShield" },
+          { slug: "resumematch-ai", title: "ResumeMatch AI" }
+        ]
       },
       {
         name: "Feature Engineering",
@@ -68,6 +82,10 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Text tokenization, TF-IDF feature unions, categorical encoding, feature scaling, and missing value imputation.",
         keywords: ["feature engineering", "preprocessing", "scaling", "nlp", "encoding"],
+        projects: [
+          { slug: "trafficshield", title: "TrafficShield" },
+          { slug: "resumematch-ai", title: "ResumeMatch AI" }
+        ]
       },
       {
         name: "Natural Language Processing (NLP)",
@@ -75,6 +93,9 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Working Knowledge",
         evidence: "Word/character n-grams, text tokenization, TF-IDF vectorization, and Jaccard token similarity scoring (ResumeMatch AI).",
         keywords: ["nlp", "text", "tfidf", "tokenization", "similarity", "jaccard"],
+        projects: [
+          { slug: "resumematch-ai", title: "ResumeMatch AI" }
+        ]
       },
       {
         name: "Model Evaluation & Benchmarking",
@@ -82,6 +103,11 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Precision, recall, F1-score, confusion matrices, ROC-AUC, and hyperparameter cross-validation.",
         keywords: ["evaluation", "metrics", "f1-score", "precision", "recall", "benchmarking"],
+        projects: [
+          { slug: "trafficshield", title: "TrafficShield" },
+          { slug: "resumematch-ai", title: "ResumeMatch AI" },
+          { slug: "moodmate", title: "MoodMate" }
+        ]
       },
     ],
   },
@@ -96,6 +122,9 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Working Knowledge",
         evidence: "Convolutional neural network architectures, loss function optimization, backpropagation, and activation functions.",
         keywords: ["deep learning", "dl", "neural networks", "backpropagation", "cnn"],
+        projects: [
+          { slug: "moodmate", title: "MoodMate" }
+        ]
       },
       {
         name: "TensorFlow & Keras",
@@ -103,6 +132,9 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Working Knowledge",
         evidence: "CNN model training on FER2013 dataset (70.28% test accuracy, 88.12% top-2 accuracy) for facial emotion recognition (MoodMate).",
         keywords: ["tensorflow", "keras", "cnn", "fer2013", "emotion recognition"],
+        projects: [
+          { slug: "moodmate", title: "MoodMate" }
+        ]
       },
       {
         name: "Computer Vision",
@@ -110,6 +142,10 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Frame-by-frame video stream analysis, image preprocessing, grayscale transformations, and ROI normalization.",
         keywords: ["computer vision", "cv", "vision", "image processing", "video"],
+        projects: [
+          { slug: "moodmate", title: "MoodMate" },
+          { slug: "satquery-ai", title: "SatQuery AI" }
+        ]
       },
       {
         name: "OpenCV",
@@ -117,6 +153,10 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Haar Cascade face detection, downsampled frame processing at 320x240, spatial image filtering (MoodMate, SatQuery AI).",
         keywords: ["opencv", "cv2", "haar cascade", "face detection", "frame processing"],
+        projects: [
+          { slug: "moodmate", title: "MoodMate" },
+          { slug: "satquery-ai", title: "SatQuery AI" }
+        ]
       },
     ],
   },
@@ -131,6 +171,9 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Structured JSON schema output generation, vision-language prompt pipelines, and multi-turn conversational agents (SatQuery AI).",
         keywords: ["openai", "gpt-4", "api", "vision api", "json schema"],
+        projects: [
+          { slug: "satquery-ai", title: "SatQuery AI" }
+        ]
       },
       {
         name: "Gemini API",
@@ -138,6 +181,9 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Multimodal visual reasoning, high-resolution document analysis, and geospatial prompt evaluation (SatQuery AI).",
         keywords: ["gemini", "google gemini", "multimodal", "vision-language", "reasoning"],
+        projects: [
+          { slug: "satquery-ai", title: "SatQuery AI" }
+        ]
       },
       {
         name: "Hugging Face Transformers",
@@ -166,6 +212,9 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Working Knowledge",
         evidence: "Remote sensing scene interpretation, prompt-guided visual reasoning, and geospatial feature extraction (SatQuery AI).",
         keywords: ["multimodal", "vision-language", "vlm", "remote sensing", "geospatial"],
+        projects: [
+          { slug: "satquery-ai", title: "SatQuery AI" }
+        ]
       },
     ],
   },
@@ -180,6 +229,11 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Component architecture, custom hooks, state lifecycle management (Tech Veda Certified, 3D Bharat, ResumeMatch AI).",
         keywords: ["react", "react.js", "hooks", "frontend", "components"],
+        projects: [
+          { slug: "trafficshield", title: "TrafficShield" },
+          { slug: "3d-bharat", title: "3D Bharat" },
+          { slug: "resumematch-ai", title: "ResumeMatch AI" }
+        ]
       },
       {
         name: "HTML5 & Semantic Web",
@@ -194,12 +248,16 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Utility-first design tokens, responsive Flexbox and CSS Grid, and custom color palettes (Great Learning Certified).",
         keywords: ["css", "css3", "tailwind", "flexbox", "grid", "responsive"],
+        projects: [
+          { slug: "trafficshield", title: "TrafficShield" },
+          { slug: "3d-bharat", title: "3D Bharat" }
+        ]
       },
       {
         name: "WebGL / Three.js",
         tier: "working_knowledge",
         tierLabel: "Working Knowledge",
-        evidence: "Interactive 3D model canvas, scene lighting, camera controls, coordinate raycasting, and Draco asset compression (3D Bharat).",
+        evidence: "Interactive 3D model canvas, scene lighting, camera controls, coordinate raycasting, and Draco asset compression (3D Bharat roadmap).",
         keywords: ["webgl", "three.js", "3d", "canvas", "draco", "graphics"],
       },
       {
@@ -222,6 +280,10 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Lightweight REST API endpoints, multipart file uploads, model inference serving, and JSON serialization (ResumeMatch AI).",
         keywords: ["flask", "python", "rest api", "backend", "endpoints"],
+        projects: [
+          { slug: "resumematch-ai", title: "ResumeMatch AI" },
+          { slug: "moodmate", title: "MoodMate" }
+        ]
       },
       {
         name: "Node.js",
@@ -236,6 +298,11 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Clean URI hierarchies, deterministic HTTP status codes, structured error payloads, and cross-origin resource sharing (CORS).",
         keywords: ["rest", "api", "endpoints", "cors", "json", "http"],
+        projects: [
+          { slug: "trafficshield", title: "TrafficShield" },
+          { slug: "resumematch-ai", title: "ResumeMatch AI" },
+          { slug: "moodmate", title: "MoodMate" }
+        ]
       },
     ],
   },
@@ -285,6 +352,13 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Version control, branch protection workflows, pull request reviews, and merge conflict resolution across software projects.",
         keywords: ["git", "github", "version control", "pr", "branches"],
+        projects: [
+          { slug: "trafficshield", title: "TrafficShield" },
+          { slug: "resumematch-ai", title: "ResumeMatch AI" },
+          { slug: "3d-bharat", title: "3D Bharat" },
+          { slug: "moodmate", title: "MoodMate" },
+          { slug: "satquery-ai", title: "SatQuery AI" }
+        ]
       },
       {
         name: "Vercel",
@@ -292,6 +366,9 @@ export const skillClustersData: SkillCluster[] = [
         tierLabel: "Proficient",
         evidence: "Automated continuous deployment, environment variable configuration, build caching, and Next.js edge hosting.",
         keywords: ["vercel", "deployment", "ci/cd", "hosting", "cloud"],
+        projects: [
+          { slug: "trafficshield", title: "TrafficShield" }
+        ]
       },
       {
         name: "Render",

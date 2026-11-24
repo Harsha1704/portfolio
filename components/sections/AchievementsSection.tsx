@@ -8,6 +8,7 @@ import {
   CheckCircle2,
   Flame,
   Globe,
+  ArrowUpRight,
 } from "lucide-react";
 import { achievementsData } from "@/data/achievements";
 import { Section } from "@/components/ui/Section";
@@ -100,6 +101,21 @@ export const AchievementsSection: React.FC = () => {
                           {badge}
                         </span>
                       ))}
+                    </div>
+                  )}
+
+                  {/* Verified Credential Link */}
+                  {item.link && (
+                    <div className="pt-3 mt-3 border-t border-slate-100 flex items-center justify-end">
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-700 hover:text-blue-900 transition-colors py-1 group/cert"
+                      >
+                        <span>{item.linkText || "Verify Certificate"}</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/cert:translate-x-0.5 group-hover/cert:-translate-y-0.5" />
+                      </a>
                     </div>
                   )}
                 </div>
