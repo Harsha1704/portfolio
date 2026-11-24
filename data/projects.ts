@@ -4,6 +4,79 @@ export const projectsData: Project[] = [
   {
     id: "satquery-ai",
     slug: "satquery-ai",
+    systemFlowDiagram: {
+      title: "SatQuery AI Multimodal Spatial-Language Flow",
+      caption: "OpenCV multi-scale raster image tiling coupled with Vision-Language Model prompting for natural language satellite imagery interrogation.",
+      explanation: "High-resolution geospatial imagery is sliced into 512x512 tile patches with coordinate metadata. Analyst natural language prompts are combined with localized spatial context and passed to a multimodal vision-language model API (GPT-4 Vision / Gemini API). The model returns localized land-use classifications and semantic bounding coordinates rendered onto an interactive React web canvas.",
+      steps: [
+        {
+          stage: "Data Ingestion",
+          title: "Raster Imagery & Natural Language Prompt",
+          component: "GeoTIFF / PNG Ingestion & Query Parser",
+          description: "Ingests high-resolution satellite imagery alongside analyst natural language queries.",
+          status: "implemented",
+          badgeText: "Multimodal Inputs",
+        },
+        {
+          stage: "Featurization",
+          title: "Multi-Scale OpenCV Spatial Tiling",
+          component: "OpenCV Slicer & Thumbnail Generator",
+          description: "Slices large overhead scenes into 512x512 tile grids to preserve fine detail within token budgets.",
+          status: "implemented",
+          badgeText: "Tile Pyramids",
+        },
+        {
+          stage: "ML Inference",
+          title: "Vision-Language Spatial Reasoning",
+          component: "GPT-4V / Gemini API Multimodal Model",
+          description: "Evaluates image tiles against zero-shot spatial bounding-box prompts and land-use taxonomy.",
+          status: "implemented",
+          badgeText: "Zero-Shot Reasoning",
+        },
+        {
+          stage: "Backend API",
+          title: "Python Orchestration Service",
+          component: "Python Flask / HTTP Client Orchestrator",
+          description: "Manages API rate limits, exponential backoff, and converts model text to structured coordinates.",
+          status: "implemented",
+          badgeText: "JSON Serialization",
+        },
+        {
+          stage: "User Interface",
+          title: "Interactive Spatial Canvas & Chat",
+          component: "React.js Geospatial Viewport",
+          description: "Displays imagery with bounding box overlays, land-use classifications, and conversational sidebar.",
+          status: "implemented",
+          badgeText: "Interactive Canvas",
+        },
+      ],
+    },
+    mlServing: {
+      pipelineTitle: "SatQuery AI ML-to-Web Serving Architecture",
+      pipelineDescription: "How large overhead raster datasets are tiled, contextualized into multimodal API prompts, and streamed into interactive client-side visual overlays.",
+      dataInput: {
+        title: "Raster Imagery Upload & Analyst Query Ingestion",
+        description: "Users upload overhead aerial imagery or select pre-loaded GIS scenes, accompanied by natural language queries targeting infrastructure, land-use, or anomalous patterns.",
+      },
+      featureAndInference: {
+        title: "Multi-Scale Tiling & Multimodal Vision-Language Inference",
+        description: "OpenCV partitions the large raster into 512x512 pixel patches to preserve resolution without exceeding API token budgets. Vision-language models evaluate tiles against domain-specific spatial prompts.",
+      },
+      backendIntegration: {
+        title: "Python Orchestration & API Rate-Limit Handling",
+        description: "Backend coordinates parallel tile queries, formats system prompts with geographic taxonomy rules, and aggregates JSON bounding boxes and semantic interpretations.",
+      },
+      frontendCommunication: {
+        title: "REST API Responses & Geospatial Coordinate Mapping",
+        description: "The React frontend receives structured tile metadata and relative bounding coordinates, transforming model outputs into pixel-accurate canvas overlays.",
+      },
+      outputVisualization: {
+        title: "Interactive Map Viewport & Multi-Turn Chat",
+        description: "Displays high-resolution imagery with highlighted bounding boxes, land-use classification tags, and a conversational chat sidebar explaining spatial findings.",
+      },
+      operationalCaveat: "Research prototype in active development; relies on external multimodal LLM APIs with provider-dependent token latency.",
+    },
+
     title: "SatQuery AI",
     subtitle: "Interactive Vision-Language Assistant for Multimodal Remote Sensing Image Analysis",
     category: "Multimodal AI",
@@ -192,6 +265,79 @@ export const projectsData: Project[] = [
   {
     id: "resumematch-ai",
     slug: "resumematch-ai",
+    systemFlowDiagram: {
+      title: "ResumeMatch AI NLP Extraction & Match Flow",
+      caption: "End-to-end document parsing, n-gram TF-IDF vectorization, calibrated Logistic Regression, and Jaccard token overlap scoring.",
+      explanation: "Resumes in PDF or DOCX formats and target job descriptions are ingested via a Flask REST API. Text is extracted, normalized, and mapped to a technology alias dictionary. Word and character TF-IDF feature unions are passed into a calibrated Logistic Regression model to determine candidate suitability tiers, while Jaccard token overlap generates skill gap matrices for revision feedback.",
+      steps: [
+        {
+          stage: "Data Ingestion",
+          title: "Document & Job Text Ingestion",
+          component: "PDF / DOCX Extractor & Input Handler",
+          description: "Parses complex multi-format candidate resumes and raw job description requirements.",
+          status: "implemented",
+          badgeText: "Multipart Upload",
+        },
+        {
+          stage: "Featurization",
+          title: "NLP Normalization & TF-IDF",
+          component: "Scikit-learn FeatureUnion (Word/Char N-Grams)",
+          description: "Sanitizes text, normalizes technology aliases, and generates high-dimensional n-gram vectors.",
+          status: "implemented",
+          badgeText: "24 Category Dictionary",
+        },
+        {
+          stage: "ML Inference",
+          title: "Calibrated Suitability Scoring",
+          component: "Logistic Regression + Jaccard Matcher",
+          description: "Classifies candidate fit into actionable tiers (No Fit, Potential Fit, Good Fit) and computes overlap.",
+          status: "implemented",
+          badgeText: "Balanced Class Weights",
+        },
+        {
+          stage: "Backend API",
+          title: "Flask REST Microservice",
+          component: "Python Flask REST Application",
+          description: "Validates input payloads, executes extraction pipelines, and serializes match diagnostics to JSON.",
+          status: "implemented",
+          badgeText: "Local Dev Service",
+        },
+        {
+          stage: "User Interface",
+          title: "Diagnostic Career Telemetry UI",
+          component: "React.js Interactive Client",
+          description: "Renders match score gauges, keyword disparity matrices, and prioritized revision recommendations.",
+          status: "implemented",
+          badgeText: "Client Dashboard",
+        },
+      ],
+    },
+    mlServing: {
+      pipelineTitle: "ResumeMatch AI ML-to-Web Serving Architecture",
+      pipelineDescription: "End-to-end architectural flow connecting document text parsing, TF-IDF feature union transformation, scikit-learn model inference, and interactive client telemetry.",
+      dataInput: {
+        title: "Multipart Document Upload & Raw Text Extraction",
+        description: "The web client submits resumes (PDF/DOCX) alongside job description strings via multipart HTTP POST. The backend parses documents and converts raw layouts into clean text.",
+      },
+      featureAndInference: {
+        title: "TF-IDF N-Grams & Calibrated Logistic Regression",
+        description: "Extracts word (1-3) and character (3-5) n-grams through scikit-learn FeatureUnion. Logistic Regression evaluates role alignment probability, while token sets compute Jaccard similarity.",
+      },
+      backendIntegration: {
+        title: "Flask REST API & JSON Serialization",
+        description: "Flask handles request routing, payload validation, and serializes match scores, detected entities, and keyword disparities into structured JSON responses.",
+      },
+      frontendCommunication: {
+        title: "Asynchronous Fetch & State Management",
+        description: "React frontend triggers asynchronous HTTP requests with upload progress indicators, receiving parsed skill matrices and match confidence scores.",
+      },
+      outputVisualization: {
+        title: "Candidate Telemetry Gauges & Revision Matrices",
+        description: "Visualizes candidate compatibility tiers (Good Fit, Potential Fit, No Fit), keyword alignment bars, missing skills checklists, and prioritized resume revision recommendations.",
+      },
+      operationalCaveat: "Runs as a local development service in Python Flask and React; production cloud deployment is planned for future microservice clustering.",
+    },
+
     title: "ResumeMatch AI",
     subtitle: "Intelligent Resume-Job Description Alignment & Career Telemetry Platform",
     category: "Applied NLP & GenAI",
@@ -575,6 +721,32 @@ export const projectsData: Project[] = [
   {
     id: "moodmate",
     slug: "moodmate",
+    mlServing: {
+      pipelineTitle: "MoodMate ML-to-Web Serving Architecture",
+      pipelineDescription: "Continuous video frame capture, OpenCV facial landmark detection, CNN emotion classification, and mood-adaptive acoustic playlist recommendation.",
+      dataInput: {
+        title: "Webcam Frame Capture & ROI Isolation",
+        description: "Captures 30 FPS video frames from user webcam; OpenCV Haar Cascade classifier detects faces and crops 48x48 pixel grayscale face regions.",
+      },
+      featureAndInference: {
+        title: "4-Block CNN Inference on FER2013 & Temporal Smoothing",
+        description: "Keras CNN model trained on FER2013 computes probability distribution across 7 emotion classes. An exponential moving average across 15 frames suppresses instantaneous classification flicker.",
+      },
+      backendIntegration: {
+        title: "Flask Video Streaming & Valence-Energy Mapping",
+        description: "Flask serves a multipart MJPEG video stream with superimposed emotion bounding boxes and maps dominant emotional states to target acoustic valence and energy vectors.",
+      },
+      frontendCommunication: {
+        title: "HTTP Video Stream & Telemetry Polling",
+        description: "The browser client displays the annotated stream in a responsive HTML5 video/image viewport while receiving emotion probabilities via lightweight JSON polling.",
+      },
+      outputVisualization: {
+        title: "Real-Time Emotion Telemetry & Dynamic Playlist",
+        description: "Renders live emotion probability gauges (Happy, Sad, Angry, Surprised, Fear, Disgust, Neutral) and dynamically updates recommended song tracks matching user emotional mood.",
+      },
+      operationalCaveat: "Local development application running on localhost with laptop webcam; cloud deployment is pending browser-side WebAssembly/TensorFlow.js edge migration.",
+    },
+
     title: "MoodMate",
     subtitle: "Real-Time Facial Expression Recognition & Music Recommendation Engine",
     category: "Computer Vision",
@@ -769,6 +941,79 @@ export const projectsData: Project[] = [
   {
     id: "trafficshield",
     slug: "trafficshield",
+    systemFlowDiagram: {
+      title: "TrafficShield System Flow & Dual-Engine Pipeline",
+      caption: "Hardware-constrained unidirectional telemetry pipeline extracting 13 forward-observable flow features for simultaneous supervised classification and unsupervised novelty detection.",
+      explanation: "Because unidirectional optical taps eliminate the reverse return path, traditional TCP handshake tracking cannot be utilized. Instead, 13 forward-observable timing and packet features are computed per flow batch. An XGBoost model classifies known malicious signatures, while an Isolation Forest computes an anomaly score against baseline normal traffic. Pre-deserialization SHA-256 validation guarantees model integrity before inference, and scores are streamed via FastAPI to a React 19 SOC command console.",
+      steps: [
+        {
+          stage: "Data Ingestion",
+          title: "Unidirectional Packet Capture",
+          component: "Optical Tap / Data Diode Tap Socket",
+          description: "Ingests forward packet streams without return path or TCP ACK feedback context.",
+          status: "implemented",
+          badgeText: "Forward Stream Only",
+        },
+        {
+          stage: "Featurization",
+          title: "13 Forward Feature Extraction",
+          component: "Flow Accumulator & Statistical Featurizer",
+          description: "Extracts packet length statistics, inter-arrival intervals, TCP flags, and payload entropy.",
+          status: "implemented",
+          badgeText: "Zero Reverse Telemetry",
+        },
+        {
+          stage: "ML Inference",
+          title: "Dual-Engine Threat Scoring",
+          component: "XGBoost Classifier + Isolation Forest",
+          description: "Simultaneous supervised threat classification and unsupervised zero-day novelty scoring.",
+          status: "implemented",
+          badgeText: "SHA-256 Verified Artifacts",
+        },
+        {
+          stage: "Backend API",
+          title: "FastAPI Scoring Microservice",
+          component: "Python FastAPI / Uvicorn Service",
+          description: "Asynchronous `/predict` and `/stream` endpoints with strict Pydantic payload models.",
+          status: "implemented",
+          badgeText: "Sub-Second Ingestion",
+        },
+        {
+          stage: "SOC UI",
+          title: "Live React 19 SOC Console",
+          component: "React 19 / Tailwind CSS Dashboard",
+          description: "Real-time flow triage, risk score gauges, anomalous flow cards, and operational alerts.",
+          status: "implemented",
+          badgeText: "Live on Vercel",
+        },
+      ],
+    },
+    mlServing: {
+      pipelineTitle: "TrafficShield ML-to-Web Serving Architecture",
+      pipelineDescription: "How unidirectional network packet streams are captured, transformed into strict forward features, evaluated against frozen dual-model weights, and rendered in the live SOC console.",
+      dataInput: {
+        title: "Unidirectional Packet Ingestion",
+        description: "Raw packet traces (PCAP files or simulated diode streams) enter the ingestion worker where packets are grouped into time-windowed flow records without requiring return ACK packets.",
+      },
+      featureAndInference: {
+        title: "13 Forward Features & Dual ML Inference",
+        description: "Computes 13 forward features (packet lengths, inter-arrival deltas, header flags, entropy). Frozen XGBoost scores known threats, while calibrated Isolation Forest detects structural anomalies.",
+      },
+      backendIntegration: {
+        title: "FastAPI REST Service & Cryptographic Verification",
+        description: "Python FastAPI exposes asynchronous scoring endpoints with Pydantic validation. The service fails closed if model weight files deviate from hardcoded SHA-256 cryptographic digests.",
+      },
+      frontendCommunication: {
+        title: "Client State Reconciliation & Polling",
+        description: "The React 19 frontend queries the scoring service via HTTP REST endpoints, updating internal telemetry states with zero re-rendering cascades across inactive metric tiles.",
+      },
+      outputVisualization: {
+        title: "Real-Time SOC Console & Alert Telemetry",
+        description: "Displays sub-second flow threat status (Normal, Suspicious, Critical), dual confidence gauges, anomaly score distributions, and actionable triage recommendations.",
+      },
+      operationalCaveat: "Live hardware deployment utilizes optical data diodes; cloud deployment on Vercel is hosted with simulated streaming flow records for interactive evaluation.",
+    },
+
     title: "TrafficShield",
     subtitle: "Unidirectional IP Traffic Network Anomaly Detection Platform",
     category: "Intelligent Systems",

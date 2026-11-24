@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Terminal, Sparkles, FileText, GraduationCap, Award, Code2, Briefcase, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, Terminal, Sparkles, GraduationCap, Award, Code2, Briefcase, CheckCircle2, Eye, Download } from "lucide-react";
 import { motion } from "framer-motion";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 import { profileData } from "@/data/profile";
@@ -11,10 +11,12 @@ import { buttonVariants } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { RevealOnScroll } from "@/components/animations/RevealOnScroll";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { ResumePreviewModal } from "@/components/ui/ResumePreviewModal";
 
 export const HeroSection: React.FC = () => {
   const prefersReduced = useReducedMotion();
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isCvModalOpen, setIsCvModalOpen] = useState(false);
 
   useEffect(() => {
     if (prefersReduced) return;
@@ -141,17 +143,32 @@ export const HeroSection: React.FC = () => {
                   <span>Connect on LinkedIn</span>
                 </a>
 
-                <a
-                  href="/Sri_Harsha_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download="Sri_Harsha_Resume.pdf"
-                  aria-label="Download Sri Harsha CV / Resume (PDF)"
-                  className={buttonVariants({ variant: "outline", size: "md" })}
-                >
-                  <FileText className="w-4 h-4 mr-2 shrink-0" />
-                  <span>CV / Resume</span>
-                </a>
+                {/* CV Action Group: In-Browser Preview & Direct Download */}
+                <div className="inline-flex items-center rounded-xl border border-slate-200 bg-white shadow-2xs p-0.5">
+                  <button
+                    type="button"
+                    onClick={() => setIsCvModalOpen(true)}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-800 hover:text-blue-700 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer"
+                    aria-label="Preview Sri Harsha CV in modal dialog"
+                    title="Preview CV in modal"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                    <span>Preview CV</span>
+                  </button>
+                  <div className="h-4 w-px bg-slate-200" />
+                  <a
+                    href="/Sri_Harsha_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download="Sri_Harsha_Resume.pdf"
+                    aria-label="Download Sri Harsha CV / Resume (PDF)"
+                    className="inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
+                    title="Direct Download (PDF)"
+                  >
+                    <Download className="w-3.5 h-3.5 shrink-0" />
+                    <span className="sr-only sm:not-sr-only">Download</span>
+                  </a>
+                </div>
 
                 <Link
                   href="/about"
@@ -270,6 +287,12 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
       </Container>
+
+      {/* Accessible In-Browser CV Preview Modal */}
+      <ResumePreviewModal
+        isOpen={isCvModalOpen}
+        onClose={() => setIsCvModalOpen(false)}
+      />
     </section>
   );
 };

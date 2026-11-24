@@ -61,6 +61,48 @@ export interface RoadmapPhase {
   description: string;
 }
 
+export interface SystemFlowStep {
+  stage: string;
+  title: string;
+  component: string;
+  description: string;
+  status: "implemented" | "planned";
+  badgeText?: string;
+}
+
+export interface SystemFlowDiagramData {
+  title: string;
+  caption: string;
+  explanation: string;
+  steps: SystemFlowStep[];
+}
+
+export interface MLServingArchitecture {
+  pipelineTitle: string;
+  pipelineDescription: string;
+  dataInput: {
+    title: string;
+    description: string;
+  };
+  featureAndInference: {
+    title: string;
+    description: string;
+  };
+  backendIntegration: {
+    title: string;
+    description: string;
+  };
+  frontendCommunication: {
+    title: string;
+    description: string;
+  };
+  outputVisualization: {
+    title: string;
+    description: string;
+  };
+  operationalCaveat?: string;
+}
+
 export interface Project {
   id: string;
   slug: string;
@@ -80,6 +122,8 @@ export interface Project {
   problemStatement?: ProblemStatementDetail;
   architectureSummary?: string;
   architectureLayers?: ArchitectureLayerItem[];
+  systemFlowDiagram?: SystemFlowDiagramData;
+  mlServing?: MLServingArchitecture;
   mermaidDiagram?: string;
   implementationSections?: ImplementationSection[];
   screenshots?: CaseStudyScreenshot[];

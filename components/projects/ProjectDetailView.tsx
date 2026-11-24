@@ -8,6 +8,8 @@ import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/animations/RevealOnScroll";
 import { CaseStudyHero } from "./CaseStudyHero";
 import { ArchitectureDiagram } from "./ArchitectureDiagram";
+import { SystemFlowDiagram } from "./SystemFlowDiagram";
+import { MLServingSection } from "./MLServingSection";
 import { ScreenshotGallery } from "./ScreenshotGallery";
 import { ImplementationDetails } from "./ImplementationDetails";
 import { ResultsAndLimitationsView } from "./ResultsAndLimitationsView";
@@ -93,6 +95,16 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({ project })
           summary={project.architectureSummary}
           layers={project.architectureLayers}
         />
+
+        {/* Section 2.1: End-to-End System Flow Diagram */}
+        {project.systemFlowDiagram && (
+          <SystemFlowDiagram diagram={project.systemFlowDiagram} />
+        )}
+
+        {/* Section 2.2: ML-to-Web Serving Architecture Callouts */}
+        {project.mlServing && (
+          <MLServingSection mlServing={project.mlServing} />
+        )}
 
         {/* Section 3: Visual Interface & System Demonstrations */}
         <ScreenshotGallery

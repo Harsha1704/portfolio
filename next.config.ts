@@ -12,6 +12,15 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      {
+        source: "/resume.pdf",
+        destination: "/Sri_Harsha_Resume.pdf",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
