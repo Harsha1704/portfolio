@@ -1,0 +1,62 @@
+import { EducationItem } from "@/types";
+
+export const educationData: EducationItem[] = [
+  {
+    id: "lpu-btech",
+    degree: "Bachelor of Technology (B.Tech)",
+    institution: "Lovely Professional University",
+    specialization: "Computer Science and Engineering (AI & ML)",
+    period: "Aug 2024 – Present",
+    score: "8.51",
+    scoreLabel: "CGPA",
+    status: "In Progress",
+    academicStanding: "Top-Tier Engineering Academic Standing (8.51 / 10.0)",
+    coursework: [
+      "Data Structures and Algorithms",
+      "Object-Oriented Programming (Java / C++)",
+      "Machine Learning & Statistical Modeling",
+      "Deep Learning & Neural Networks",
+      "Computer Vision Fundamentals",
+      "Natural Language Processing (NLP)",
+      "Database Management Systems (SQL)",
+      "Software Engineering & Agile Methodologies",
+    ],
+    highlights: [
+      "Specialized in Artificial Intelligence and Machine Learning within the Department of Computer Science & Engineering (Punjab, India).",
+      "Maintained consistent academic distinction with an 8.51 / 10.0 CGPA across all completed semesters.",
+      "Balanced rigorous theoretical foundations (DSA, linear algebra, probability) with applied full-stack software engineering.",
+    ],
+  },
+  {
+    id: "narayana-intermediate",
+    degree: "Senior Secondary Education (Intermediate)",
+    institution: "Narayana Junior College",
+    specialization: "MPC (Mathematics, Physics, Chemistry)",
+    period: "Jun 2023 – Mar 2024",
+    score: "94.9%",
+    scoreLabel: "Percentage",
+    status: "Completed",
+    academicStanding: "State Board Academic Distinction",
+    highlights: [
+      "Achieved 94.9% academic excellence in state board secondary examinations (Guntur, Andhra Pradesh).",
+      "Completed intensive pre-engineering coursework in differential calculus, linear algebra, coordinate geometry, and physics.",
+      "Developed foundational mathematical and analytical problem-solving competencies.",
+    ],
+  },
+  {
+    id: "sri-chaitanya-matriculation",
+    degree: "Secondary School Certificate (Matriculation)",
+    institution: "Sri Chaitanya Techno School",
+    specialization: "Matriculation (Secondary Education)",
+    period: "Jun 2021 – Mar 2022",
+    score: "92.67%",
+    scoreLabel: "Percentage",
+    status: "Completed",
+    academicStanding: "Graduated with Distinction",
+    highlights: [
+      "Graduated with 92.67% overall academic distinction (Guntur, Andhra Pradesh).",
+      "Demonstrated strong aptitude in mathematics, physical sciences, and logical reasoning.",
+      "Participated in regional science exhibitions and mathematics competitions.",
+    ],
+  },
+];
