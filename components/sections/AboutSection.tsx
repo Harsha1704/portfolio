@@ -42,7 +42,7 @@ export const AboutSection: React.FC = () => {
                 </div>
                 <div className="h-8 w-px bg-slate-200" />
                 <span className="text-xs font-medium text-slate-600">
-                  Third Year (2023 – 2026) • High Academic Standing
+                  August 2024 – Present • High Academic Standing (CGPA 8.51)
                 </span>
               </div>
 

@@ -85,9 +85,9 @@ export const HeroSection: React.FC = () => {
             {/* Narrative Bio */}
             <RevealOnScroll delay={0.16}>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mb-8">
-                Third-year Computer Science & Engineering undergraduate specializing in{" "}
+                Computer Science & Engineering undergraduate specializing in{" "}
                 <strong className="text-slate-900 font-semibold">AI & Machine Learning</strong> at{" "}
-                Lovely Professional University (<span className="text-blue-700 font-semibold font-mono">8.51 CGPA</span>). 
+                Lovely Professional University (<span className="text-blue-700 font-semibold font-mono">8.51 CGPA</span>, Aug 2024 – Present). 
                 Passionate about bridging multimodal vision-language models with resilient, full-stack software architectures.
               </p>
             </RevealOnScroll>
