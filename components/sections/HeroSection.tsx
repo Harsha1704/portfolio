@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Terminal, Sparkles, FileText } from "lucide-react";
+import { ArrowUpRight, Terminal, Sparkles, FileText, GraduationCap, Award, Code2, Briefcase, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 import { profileData } from "@/data/profile";
@@ -83,8 +83,8 @@ export const HeroSection: React.FC = () => {
             </RevealOnScroll>
 
             {/* Narrative Bio */}
-            <RevealOnScroll delay={0.16}>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mb-8">
+            <RevealOnScroll delay={0.15}>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mb-6">
                 Computer Science & Engineering undergraduate specializing in{" "}
                 <strong className="text-slate-900 font-semibold">AI & Machine Learning</strong> at{" "}
                 Lovely Professional University (<span className="text-blue-700 font-semibold font-mono">8.51 CGPA</span>, Aug 2024 – Present). 
@@ -92,9 +92,35 @@ export const HeroSection: React.FC = () => {
               </p>
             </RevealOnScroll>
 
-            {/* Action Buttons & Socials */}
-            <RevealOnScroll delay={0.2}>
-              <div className="flex flex-wrap items-center gap-4 mb-10">
+            {/* Compact Recruiter Credential Bar */}
+            <RevealOnScroll delay={0.18}>
+              <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-8">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100/90 border border-slate-200/80 text-xs font-semibold text-slate-800 shadow-2xs">
+                  <GraduationCap className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                  <span>B.Tech CSE (AI & ML), LPU</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-50/90 border border-blue-200/80 text-xs font-semibold text-blue-900 shadow-2xs">
+                  <Award className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                  <span>CGPA: 8.51</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50/80 border border-emerald-200/80 text-xs font-semibold text-emerald-900 shadow-2xs">
+                  <Code2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <span>250+ DSA Problems</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-50/80 border border-indigo-200/80 text-xs font-semibold text-indigo-900 shadow-2xs">
+                  <Briefcase className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
+                  <span>Edufiy ML Internship</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-50/80 border border-amber-200/80 text-xs font-semibold text-amber-900 shadow-2xs">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                  <span>Oracle MySQL Certified</span>
+                </div>
+              </div>
+            </RevealOnScroll>
+
+            {/* Action Buttons & Prominent LinkedIn CTA */}
+            <RevealOnScroll delay={0.21}>
+              <div className="flex flex-wrap items-center gap-3 sm:gap-3.5 mb-10">
                 <Link
                   href="/projects"
                   className={buttonVariants({ variant: "primary", size: "md" })}
@@ -102,45 +128,49 @@ export const HeroSection: React.FC = () => {
                   <span>Explore Projects</span>
                   <ArrowUpRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
-                <Link
-                  href="/about"
-                  className={buttonVariants({ variant: "outline", size: "md" })}
+
+                {/* Prominent LinkedIn Contact CTA */}
+                <a
+                  href="https://linkedin.com/in/sriharsha-jilla/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-xl bg-[#0a66c2] text-white hover:bg-[#004182] focus:ring-[#0a66c2] shadow-xs px-4 py-2 text-sm gap-2"
+                  aria-label="Connect with Sri Harsha on LinkedIn"
                 >
-                  About Me
-                </Link>
+                  <LinkedinIcon className="w-4 h-4 shrink-0 fill-current" />
+                  <span>Connect on LinkedIn</span>
+                </a>
+
                 <a
                   href="/Sri_Harsha_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   download="Sri_Harsha_Resume.pdf"
                   aria-label="Download Sri Harsha CV / Resume (PDF)"
-                  className={buttonVariants({ variant: "secondary", size: "md" })}
+                  className={buttonVariants({ variant: "outline", size: "md" })}
                 >
                   <FileText className="w-4 h-4 mr-2 shrink-0" />
                   <span>CV / Resume</span>
                 </a>
 
-                {/* Social Profile Links */}
-                <div className="flex items-center gap-2 pl-2 border-l border-slate-200">
+                <Link
+                  href="/about"
+                  className={buttonVariants({ variant: "ghost", size: "md" })}
+                >
+                  About Me
+                </Link>
+
+                {/* Social Profile Link */}
+                <div className="flex items-center pl-1 sm:pl-2 border-l border-slate-200">
                   <a
                     href="https://github.com/Harsha1704"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-600 hover:text-slate-950 hover:bg-slate-100 hover:border-slate-300 transition-colors"
+                    className="p-2 rounded-xl border border-slate-200 bg-slate-50 text-slate-600 hover:text-slate-950 hover:bg-slate-100 hover:border-slate-300 transition-colors"
                     aria-label="Sri Harsha on GitHub (@Harsha1704)"
                     title="GitHub: github.com/Harsha1704"
                   >
                     <GithubIcon className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/sriharsha-jilla/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-600 hover:text-blue-600 hover:bg-blue-50 hover:border-blue-200 transition-colors"
-                    aria-label="Sri Harsha on LinkedIn"
-                    title="LinkedIn: linkedin.com/in/sriharsha-jilla"
-                  >
-                    <LinkedinIcon className="w-4 h-4" />
                   </a>
                 </div>
               </div>

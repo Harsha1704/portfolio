@@ -8,7 +8,7 @@ export const projectsData: Project[] = [
     subtitle: "Interactive Vision-Language Assistant for Multimodal Remote Sensing Image Analysis",
     category: "Multimodal AI",
     status: "prototype",
-    statusLabel: "In Active Development",
+    statusLabel: "Prototype / Local Development",
     summary:
       "An interactive vision-language assistant designed to ingest remote sensing and aerial imagery, allowing domain practitioners to query geographic visual patterns, land-use classifications, and infrastructure anomalies using natural language.",
     tags: ["Multimodal AI", "Computer Vision", "Python", "Flask", "React.js", "OpenCV"],
@@ -196,7 +196,7 @@ export const projectsData: Project[] = [
     subtitle: "Intelligent Resume-Job Description Alignment & Career Telemetry Platform",
     category: "Applied NLP & GenAI",
     status: "prototype",
-    statusLabel: "Functional Core Implemented",
+    statusLabel: "Prototype / Local Development",
     summary:
       "A candidate telemetry platform that parses complex resume documents (PDF/DOCX), extracts semantic entities and skill profiles, and computes alignment metrics against target job descriptions with keyword disparity matrices.",
     tags: ["NLP", "Generative AI", "Scikit-learn", "React.js", "Flask", "Python"],
@@ -392,7 +392,7 @@ export const projectsData: Project[] = [
     subtitle: "Interactive Digital Heritage Exploration Platform (2D SVG Live; 3D/WebGL Planned)",
     category: "3D & Interactive Web",
     status: "prototype",
-    statusLabel: "Functional 2D Web Application",
+    statusLabel: "Prototype / Local Development",
     summary:
       "An interactive digital heritage exploration platform built to democratize access to Indian architectural landmarks, featuring an implemented interactive 2D SVG geographic monument exploration interface with architectural and historical metadata. Interactive WebGL/Three.js 3D model rendering capabilities are on the planned future roadmap.",
     tags: ["React.js", "Interactive 2D SVG Map", "Cultural Heritage Tech", "Metadata Catalog", "WebGL (Planned)"],
@@ -579,7 +579,7 @@ export const projectsData: Project[] = [
     subtitle: "Real-Time Facial Expression Recognition & Music Recommendation Engine",
     category: "Computer Vision",
     status: "prototype",
-    statusLabel: "Functional Core Prototype",
+    statusLabel: "Prototype / Local Development",
     summary:
       "An affective computing application that analyzes live video frames from a web camera, detects user facial micro-expressions, classifies dominant emotional states via deep neural networks, and generates personalized music recommendations.",
     tags: ["TensorFlow", "Keras", "OpenCV", "Python", "Flask", "Deep Learning"],
@@ -773,7 +773,7 @@ export const projectsData: Project[] = [
     subtitle: "Unidirectional IP Traffic Network Anomaly Detection Platform",
     category: "Intelligent Systems",
     status: "live",
-    statusLabel: "Live SOC Command Center",
+    statusLabel: "Live Demo",
     summary:
       "An enterprise-grade, hybrid ML-based network anomaly detection platform designed for unidirectional optical taps and data diodes protecting critical infrastructure. It couples a frozen supervised classifier (XGBoost) with an unlabelled-calibrated anomaly detector (Isolation Forest) across 13 forward-observable packet and timing features to detect known attack signatures and novel zero-day structural anomalies without reverse-flow telemetry.",
     tags: ["Network Security", "Machine Learning", "XGBoost", "Isolation Forest", "React 19", "FastAPI / Python", "Vercel"],

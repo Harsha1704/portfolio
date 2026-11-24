@@ -17,7 +17,7 @@ This portfolio is an enterprise-grade, multi-page application architected with N
 ### Core Credentials
 - **Academic Distinction:** B.Tech CSE (AI & ML) @ Lovely Professional University (**8.51 CGPA**).
 - **Algorithmic Problem Solving:** **250+ solved problems** across LeetCode, GeeksforGeeks, Codeforces & HackerRank.
-- **Industry Certification:** Oracle AI Database Certified Foundations Associate.
+- **Industry Certification:** Oracle Certified Associate — MySQL Database.
 - **Hackathon Achievement:** Rank 8 among 50 teams at CODE STORM Hackathon.
 - **Industry Experience:** AI/ML Intern at Edufiy Tech Solutions.
 

@@ -2,21 +2,21 @@ import { CertificationItem } from "@/types";
 
 export const certificationsData: CertificationItem[] = [
   {
-    id: "oracle-ai-foundations",
-    title: "Oracle AI Database Certified Foundations Associate",
+    id: "oracle-mysql",
+    title: "Oracle Certified Associate — MySQL Database",
     issuer: "Oracle Corporation",
     date: "September 2026",
     verificationStatus: "Verified Industry",
     strategicValue:
-      "Validates foundational literacy in enterprise cloud databases, autonomous database infrastructure, and vector search operations within enterprise data pipelines.",
+      "Validates relational database administration, schema design, ACID transactions, complex SQL queries, and relational persistence pipelines for software applications.",
     competencies: [
-      "AI & Machine Learning in Enterprise Cloud Databases",
-      "Autonomous Database Architecture & Cloud Provisioning",
-      "Vector Search & Embeddings in Relational SQL",
-      "Enterprise Cloud Data Infrastructure & Security Controls",
+      "Relational Database Schema Design & Normalization",
+      "ACID Transaction Management & Integrity Constraints",
+      "Complex SQL Joins, Indexing & Query Optimization",
+      "Data Persistence for Python/Node.js Web Architectures",
     ],
     credentialNote:
-      "Digital accreditation record and certificate ID on file (verification ID available upon request per MISSING_INFORMATION.md).",
+      "Certification credential on file (verification ID available upon request).",
   },
   {
     id: "react-tech-veda",

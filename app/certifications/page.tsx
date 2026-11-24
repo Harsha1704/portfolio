@@ -7,7 +7,7 @@ import { CertificationsSection } from "@/components/sections/CertificationsSecti
 export const metadata: Metadata = {
   title: "Certifications",
   description:
-    "Verified technical accreditations: Oracle AI Database Certified Foundations Associate, React.js (Tech Veda), and Front End Development (Great Learning).",
+    "Verified technical accreditations: Oracle Certified Associate — MySQL Database, React.js (Tech Veda), and Front End Development (Great Learning).",
 };
 
 export default function CertificationsPage() {

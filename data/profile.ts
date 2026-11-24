@@ -45,7 +45,7 @@ export const profileData: ProfileData = {
   metrics: [
     { label: "Academic CGPA", value: "8.51", context: "Lovely Professional University" },
     { label: "Problem Solving", value: "250+", context: "LeetCode, GFG & HackerRank" },
-    { label: "Oracle AI Database", value: "Certified", context: "Foundations Associate" },
+    { label: "Oracle MySQL", value: "Certified", context: "Database Associate" },
     { label: "CODE STORM Hackathon", value: "Rank 8", context: "8th among 50 teams" },
   ],
 

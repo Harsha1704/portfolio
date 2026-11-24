@@ -82,11 +82,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 href={project.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs font-semibold text-slate-600 hover:text-slate-900 py-1.5 transition-colors"
-                aria-label={`View ${project.title} on GitHub`}
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 py-1.5 transition-colors"
+                aria-label={`View ${project.title} source code on GitHub`}
               >
                 <GithubIcon className="w-3.5 h-3.5" />
-                <span>GitHub</span>
+                <span>Source Code</span>
               </a>
             )}
             <a
@@ -106,16 +106,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 href={project.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 hover:text-blue-700 py-1.5 group/repo"
-                aria-label={`View ${project.title} repository on GitHub`}
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-blue-600 py-1.5 group/repo transition-colors"
+                aria-label={`View ${project.title} source code on GitHub`}
               >
                 <GithubIcon className="w-3.5 h-3.5" />
-                <span>GitHub Repository</span>
+                <span>Source Code</span>
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/repo:translate-x-0.5 group-hover/repo:-translate-y-0.5" />
               </a>
             )}
-            <span className="text-[11px] font-mono text-slate-400">
-              Demo not currently available
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-slate-600 bg-slate-100/90 px-2.5 py-1 rounded-md border border-slate-200/80">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
+              <span>Prototype / Local Dev</span>
             </span>
           </div>
         )}

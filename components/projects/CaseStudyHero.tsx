@@ -51,7 +51,7 @@ export const CaseStudyHero: React.FC<CaseStudyHeroProps> = ({ project }) => {
         {project.subtitle}
       </p>
 
-      {/* Action Buttons */}
+      {/* Action Buttons & Availability Badges */}
       <div className="flex flex-wrap items-center gap-3 mb-10">
         {project.liveUrl ? (
           <>
@@ -61,7 +61,7 @@ export const CaseStudyHero: React.FC<CaseStudyHeroProps> = ({ project }) => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-blue-600 text-white font-medium text-sm px-5 py-2.5 rounded-xl shadow-sm hover:bg-blue-700 transition-all focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
             >
-              <span>Launch Live Application</span>
+              <span>Launch Live Demo</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
             {project.repoUrl && (
@@ -72,7 +72,7 @@ export const CaseStudyHero: React.FC<CaseStudyHeroProps> = ({ project }) => {
                 className="inline-flex items-center gap-2 bg-white text-slate-700 font-medium text-sm px-5 py-2.5 rounded-xl border border-slate-200 shadow-sm hover:bg-slate-50 hover:text-slate-900 transition-all"
               >
                 <GithubIcon className="w-4 h-4" />
-                <span>View Source Repository</span>
+                <span>Source Code</span>
               </a>
             )}
           </>
@@ -83,15 +83,16 @@ export const CaseStudyHero: React.FC<CaseStudyHeroProps> = ({ project }) => {
                 href={project.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-blue-600 text-white font-medium text-sm px-5 py-2.5 rounded-xl shadow-sm hover:bg-blue-700 transition-all focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                className="inline-flex items-center gap-2 bg-slate-900 text-white font-medium text-sm px-5 py-2.5 rounded-xl shadow-sm hover:bg-slate-800 transition-all focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
               >
                 <GithubIcon className="w-4 h-4" />
-                <span>GitHub Repository</span>
+                <span>Source Code</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             )}
-            <span className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-500 bg-slate-100 px-3.5 py-2.5 rounded-xl border border-slate-200">
-              <span>Demo not currently available</span>
+            <span className="inline-flex items-center gap-2 text-xs font-mono font-medium text-slate-700 bg-slate-100 px-3.5 py-2.5 rounded-xl border border-slate-200">
+              <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />
+              <span>Prototype / Local Development</span>
             </span>
           </>
         )}
