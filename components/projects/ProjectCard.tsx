@@ -76,7 +76,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         </Link>
 
         {project.liveUrl ? (
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             {project.repoUrl && (
               <a
                 href={project.repoUrl}
@@ -87,6 +87,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               >
                 <GithubIcon className="w-3.5 h-3.5" />
                 <span>Source Code</span>
+              </a>
+            )}
+            {project.apiUrl && (
+              <a
+                href={project.apiUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs font-semibold text-slate-600 hover:text-slate-900 py-1.5 transition-colors"
+                aria-label={`View ${project.title} backend API`}
+              >
+                <span>API</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             )}
             <a

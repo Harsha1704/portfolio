@@ -29,7 +29,7 @@ This portfolio is an enterprise-grade, multi-page application architected with N
 |---|---|---|---|---|
 | **TrafficShield** | Cybersecurity & Systems | Unidirectional IP network anomaly detection, hybrid XGBoost + Isolation Forest, React 19 SOC console | [Live Deployment](https://trafficshield.vercel.app) | [GitHub](https://github.com/Harsha1704/trafficshield) |
 | **SatQuery AI** | Multimodal AI | Interactive vision-language assistant for remote sensing imagery, OpenCV multi-scale tiling | Local Research Prototype | [GitHub](https://github.com/Harsha1704/Satquery_ai) |
-| **ResumeMatch AI** | Applied NLP | Logistic Regression category classifier, TF-IDF feature extraction, Jaccard similarity matcher | Local Development Service | [GitHub](https://github.com/Harsha1704/ResumeMatch_AI) |
+| **ResumeMatch AI** | Applied NLP | Logistic Regression category classifier, TF-IDF feature extraction, weighted requirement matcher | [Live Frontend](https://frontend-mu-rust-l6t4ywn0qf.vercel.app) · [Backend API](https://resumematch-ai-api-atil.onrender.com) | [GitHub](https://github.com/Harsha1704/ResumeMatch_AI) |
 | **3D Bharat** | 3D & Digital Heritage | Digital preservation platform, React 19 Leaflet map, Python FastAPI, PostgreSQL 17 | Local Web Application | [GitHub](https://github.com/Harsha1704/3D_Bharat) |
 | **MoodMate** | Computer Vision | 4-block CNN facial emotion recognition on FER2013, 15-frame majority voting, audio valence recommender | Local Webcam Application | [GitHub](https://github.com/Harsha1704/MoodMate) |
 

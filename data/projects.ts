@@ -300,7 +300,7 @@ export const projectsData: Project[] = [
           component: "Python Flask REST Application",
           description: "Validates input payloads, executes extraction pipelines, and serializes match diagnostics to JSON.",
           status: "implemented",
-          badgeText: "Local Dev Service",
+          badgeText: "Live REST API",
         },
         {
           stage: "User Interface",
@@ -335,18 +335,19 @@ export const projectsData: Project[] = [
         title: "Candidate Telemetry Gauges & Revision Matrices",
         description: "Visualizes candidate compatibility tiers (Good Fit, Potential Fit, No Fit), keyword alignment bars, missing skills checklists, and prioritized resume revision recommendations.",
       },
-      operationalCaveat: "Runs as a local development service in Python Flask and React; production cloud deployment is planned for future microservice clustering.",
+      operationalCaveat: "Interactive web client deployed live on Vercel; Python Flask REST API deployed on Render with automated health monitoring. Free-tier cloud instances may require a brief wake-up period on initial request.",
     },
 
     title: "ResumeMatch AI",
     subtitle: "Intelligent Resume-Job Description Alignment & Career Telemetry Platform",
     category: "Applied NLP & GenAI",
-    status: "prototype",
-    statusLabel: "Prototype / Local Development",
+    status: "live",
+    statusLabel: "Live Demo",
     summary:
       "A candidate telemetry platform that parses complex resume documents (PDF/DOCX), extracts semantic entities and skill profiles, and computes alignment metrics against target job descriptions with keyword disparity matrices.",
-    tags: ["NLP", "Generative AI", "Scikit-learn", "React.js", "Flask", "Python"],
-    liveUrl: null,
+    tags: ["NLP", "Generative AI", "Scikit-learn", "React.js", "Flask", "Python", "Vercel", "Render"],
+    liveUrl: "https://frontend-mu-rust-l6t4ywn0qf.vercel.app",
+    apiUrl: "https://resumematch-ai-api-atil.onrender.com",
     repoUrl: "https://github.com/Harsha1704/ResumeMatch_AI",
     timeline: "2024 - Present",
     featured: true,
@@ -472,6 +473,7 @@ export const projectsData: Project[] = [
       "Weighted requirement coverage engine distinguishing required, optional, and negated skills (verified in job_matching.py).",
       "Curated technology alias database eliminating false positive matches for short acronyms.",
       "Extensive test harness with 292 passing automated tests and 97.65% code coverage.",
+      "Live multi-tier cloud deployment: React client deployed on Vercel and Flask REST microservice deployed on Render.",
     ],
     plannedFeatures: [
       "Interview Intelligence module generating tailored technical and behavioral preparation questions.",
@@ -481,8 +483,8 @@ export const projectsData: Project[] = [
     ],
     techStack: [
       { category: "NLP & Machine Learning", items: ["Python", "Scikit-learn (Logistic Regression)", "TF-IDF FeatureUnion (Word + Char)", "NLTK / Regex"] },
-      { category: "Backend & API", items: ["Flask", "RESTful Architecture", "PyPDF2", "python-docx", "Pytest (292 tests)"] },
-      { category: "Frontend", items: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion"] },
+      { category: "Backend & API", items: ["Flask", "RESTful Architecture", "PyPDF2", "python-docx", "Pytest (292 tests)", "Render"] },
+      { category: "Frontend & Deployment", items: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"] },
       { category: "Storage (Planned)", items: ["PostgreSQL", "Supabase"] },
     ],
     challenges: [
@@ -506,6 +508,7 @@ export const projectsData: Project[] = [
         "Verified production codebase with 292 passing automated tests and 97.65% code coverage (documented in test-results.txt).",
         "Source-verified calibrated Logistic Regression and word/char TF-IDF feature union pipelines (resume_ml/classical.py, features.py).",
         "Source-verified weighted taxonomy requirement matching engine detecting mandatory vs optional skills and negated claims (backend/app/services/job_matching.py).",
+        "Live dual-tier deployment: Interactive web client on Vercel (https://frontend-mu-rust-l6t4ywn0qf.vercel.app) backed by live Flask REST API on Render (https://resumematch-ai-api-atil.onrender.com/health).",
       ],
       limitations: [
         "Jaccard similarity index is a historical baseline formulation; the production codebase uses weighted taxonomy coverage.",

@@ -114,6 +114,7 @@ export interface Project {
   summary: string;
   tags: string[];
   liveUrl: string | null;
+  apiUrl?: string | null;
   repoUrl: string | null;
   timeline: string;
   featured: boolean;

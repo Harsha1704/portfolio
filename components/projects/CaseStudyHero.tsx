@@ -64,6 +64,17 @@ export const CaseStudyHero: React.FC<CaseStudyHeroProps> = ({ project }) => {
               <span>Launch Live Demo</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
+            {project.apiUrl && (
+              <a
+                href={project.apiUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-slate-100 text-slate-800 font-medium text-sm px-5 py-2.5 rounded-xl border border-slate-200 shadow-sm hover:bg-slate-200 hover:text-slate-900 transition-all focus:outline-none focus:ring-2 focus:ring-slate-400"
+              >
+                <span>Backend API</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
+            )}
             {project.repoUrl && (
               <a
                 href={project.repoUrl}
