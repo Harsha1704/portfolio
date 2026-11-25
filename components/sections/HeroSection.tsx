@@ -220,7 +220,7 @@ export const HeroSection: React.FC = () => {
           {/* Right Column: Approved Candidate Portrait alongside introduction */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <RevealOnScroll delay={0.18} direction="left" className="w-full max-w-md">
-              <div className="relative group">
+              <div className="relative group lg:-translate-y-[72px]">
                 {/* Subtle ambient cobalt glow behind portrait */}
                 <div className="absolute -inset-1.5 bg-gradient-to-tr from-blue-600/20 via-indigo-600/15 to-blue-400/20 rounded-[28px] blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
