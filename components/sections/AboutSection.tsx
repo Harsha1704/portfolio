@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Brain, Code2, GraduationCap, Layers, Target } from "lucide-react";
 import { profileData } from "@/data/profile";
 import { Section } from "@/components/ui/Section";
@@ -18,9 +19,33 @@ export const AboutSection: React.FC = () => {
       subtitle="Bridging theoretical machine learning models with resilient, production-ready full-stack software architectures."
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
-        {/* Left Column: Academic & Brand Spotlight */}
+        {/* Left Column: Portrait & Academic Spotlight */}
         <div className="lg:col-span-5 space-y-6">
-          <RevealOnScroll delay={0.1}>
+          {/* Approved Professional Portrait */}
+          <RevealOnScroll delay={0.08}>
+            <div className="relative rounded-[26px] overflow-hidden border border-slate-200/90 bg-white shadow-md">
+              <div className="relative aspect-[4/5] w-full overflow-hidden bg-slate-100">
+                <Image
+                  src="/images/profile/profile-photo.png"
+                  alt="Sri Harsha — Aspiring Machine Learning Engineer & Full-Stack Developer"
+                  fill
+                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 450px, 440px"
+                  className="object-cover object-[center_12%]"
+                />
+              </div>
+              <div className="p-4 sm:p-5 bg-white border-t border-slate-100 flex items-center justify-between">
+                <div>
+                  <h2 className="text-base font-bold text-slate-900 leading-tight">Sri Harsha</h2>
+                  <p className="text-xs text-blue-700 font-semibold font-mono">B.Tech CSE (AI & ML) • LPU</p>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-50 border border-blue-200/80 text-xs font-semibold text-blue-900">
+                  <span>CGPA 8.51</span>
+                </div>
+              </div>
+            </div>
+          </RevealOnScroll>
+
+          <RevealOnScroll delay={0.12}>
             <Card className="p-6 sm:p-8 bg-white border border-slate-200 shadow-sm relative overflow-hidden">
               <div className="h-10 w-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
                 <GraduationCap className="w-5 h-5" />

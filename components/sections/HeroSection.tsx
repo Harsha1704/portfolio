@@ -2,13 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Terminal, Sparkles, GraduationCap, Award, Code2, Briefcase, CheckCircle2, Eye, Download } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, Sparkles, GraduationCap, Award, Code2, Briefcase, CheckCircle2, Eye, Download } from "lucide-react";
 import { motion } from "framer-motion";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 import { profileData } from "@/data/profile";
 import { Container } from "@/components/ui/Container";
 import { buttonVariants } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
 import { RevealOnScroll } from "@/components/animations/RevealOnScroll";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { ResumePreviewModal } from "@/components/ui/ResumePreviewModal";
@@ -217,73 +217,49 @@ export const HeroSection: React.FC = () => {
             </RevealOnScroll>
           </div>
 
-          {/* Right Column: Architectural Telemetry Visual Card with Refined Depth */}
-          <div className="lg:col-span-5">
-            <RevealOnScroll delay={0.18} direction="left">
-              <Card className="p-6 md:p-8 bg-slate-900 text-slate-100 shadow-2xl rounded-3xl border-slate-800 relative overflow-hidden group hover:border-slate-700 transition-all duration-300">
-                {/* Subtle Ambient Backlight Glow */}
-                <div className="absolute top-0 right-0 w-48 h-48 bg-blue-600/10 rounded-full blur-2xl pointer-events-none" />
+          {/* Right Column: Approved Candidate Portrait alongside introduction */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <RevealOnScroll delay={0.18} direction="left" className="w-full max-w-md">
+              <div className="relative group">
+                {/* Subtle ambient cobalt glow behind portrait */}
+                <div className="absolute -inset-1.5 bg-gradient-to-tr from-blue-600/20 via-indigo-600/15 to-blue-400/20 rounded-[28px] blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                {/* Visual Window Chrome */}
-                <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
-                  <div className="flex items-center gap-2">
-                    <span className="h-3 w-3 rounded-full bg-red-500/80 group-hover:brightness-110 transition-all" />
-                    <span className="h-3 w-3 rounded-full bg-amber-500/80 group-hover:brightness-110 transition-all" />
-                    <span className="h-3 w-3 rounded-full bg-emerald-500/80 group-hover:brightness-110 transition-all" />
-                  </div>
-                  <span className="text-xs font-mono text-slate-400 flex items-center gap-1.5">
-                    <Terminal className="w-3.5 h-3.5 text-blue-400" />
-                    <span>satquery-multimodal.ts</span>
-                  </span>
-                </div>
+                {/* Portrait Card Container */}
+                <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden border border-slate-200/90 bg-white shadow-2xl transition-all duration-300">
+                  <div className="relative aspect-[4/5] w-full overflow-hidden bg-slate-100">
+                    <Image
+                      src="/images/profile/profile-photo.png"
+                      alt="Sri Harsha — B.Tech CSE (AI & ML) at Lovely Professional University"
+                      fill
+                      priority
+                      sizes="(max-width: 640px) 92vw, (max-width: 1024px) 450px, 420px"
+                      className="object-cover object-[center_12%] transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
 
-                <div className="space-y-4 font-mono text-xs">
-                  <div>
-                    <span className="text-purple-400">const</span>{" "}
-                    <span className="text-blue-300">pipeline</span> ={" "}
-                    <span className="text-amber-300">new</span>{" "}
-                    <span className="text-emerald-300">MultimodalVisionAssistant</span>({`{`}
-                  </div>
-                  <div className="pl-4 text-slate-300 space-y-1">
-                    <div>
-                      backbone: <span className="text-emerald-400">&quot;remote-sensing-v2&quot;</span>,
-                    </div>
-                    <div>
-                      crossAttention: <span className="text-blue-400">true</span>,
-                    </div>
-                    <div>
-                      resolution: <span className="text-amber-400">&quot;4K-Tiled&quot;</span>,
-                    </div>
-                    <div>
-                      latencyBudget: <span className="text-purple-300">150</span> <span className="text-slate-500">{"// ms"}</span>
-                    </div>
-                  </div>
-                  <div>{`});`}</div>
+                    {/* Subtle gradient overlay at bottom for clean badge contrast */}
+                    <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950/75 via-slate-950/30 to-transparent pointer-events-none" />
 
-                  <div className="pt-2 text-slate-400 border-t border-slate-800 space-y-1">
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-emerald-400">✓</span> Ingested high-resolution raster tile
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-emerald-400">✓</span> Cross-attention spatial alignment: <span className="text-blue-300">0.942 IoU</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-blue-400">⚡</span> Full-stack API: <span className="text-slate-200">Flask + React.js</span>
+                    {/* Floating recruiter status card */}
+                    <div className="absolute bottom-3.5 left-3.5 right-3.5 p-3 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/60 text-white shadow-lg flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
+                        <span className="relative flex h-2.5 w-2.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                        <div>
+                          <p className="text-xs font-semibold text-white tracking-tight">Sri Harsha</p>
+                          <p className="text-[10px] sm:text-[11px] font-mono text-slate-300">
+                            B.Tech CSE (AI &amp; ML) • <span className="whitespace-nowrap">8.51 CGPA</span>
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[10px] font-mono font-semibold text-blue-300 bg-blue-950/80 px-2.5 py-1 rounded-lg border border-blue-800/60">
+                        LPU
+                      </span>
                     </div>
                   </div>
                 </div>
-
-                {/* Badge */}
-                <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-slate-400 flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Status: <span className="text-emerald-400 font-semibold">Active Pipeline</span>
-                  </span>
-                  <span className="text-[11px] font-mono text-blue-400 bg-blue-950/80 px-2 py-0.5 rounded border border-blue-800/50">
-                    Dual-Domain Stack
-                  </span>
-                </div>
-              </Card>
+              </div>
             </RevealOnScroll>
           </div>
         </div>
