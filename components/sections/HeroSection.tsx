@@ -107,7 +107,7 @@ export const HeroSection: React.FC = () => {
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50/80 border border-emerald-200/80 text-xs font-semibold text-emerald-900 shadow-2xs">
                   <Code2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>250+ DSA Problems</span>
+                  <span>250+ Problems Solved</span>
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-50/80 border border-indigo-200/80 text-xs font-semibold text-indigo-900 shadow-2xs">
                   <Briefcase className="w-3.5 h-3.5 text-indigo-600 shrink-0" />

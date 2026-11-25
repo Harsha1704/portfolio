@@ -5,9 +5,9 @@ export const experienceData: ExperienceItem[] = [
     id: "edufiy-tech-solutions",
     role: "AI/ML Intern",
     company: "Edufiy Tech Solutions",
-    period: "January 2025 – March 2025",
+    period: "January 2025 – March 2025 (2 Months)",
     location: "Technical Engineering Internship (Remote)",
-    type: "Industry Internship",
+    type: "Industry Internship (2 Months)",
     summary:
       "Contributed to machine learning pipeline development, exploratory data preprocessing workflows, and predictive model evaluation routines within an agile software engineering team.",
     bullets: [

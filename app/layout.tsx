@@ -16,9 +16,8 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-// Safe fallback: never emit unconfirmed domain in production; fallback to localhost for dev/testing
-const baseUrl = siteUrl || "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio-six-lake-12.vercel.app";
+const baseUrl = siteUrl;
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -42,13 +41,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Sri Harsha" }],
   creator: "Sri Harsha",
-  // Only publish canonical URL when an approved production domain is explicitly configured
-  alternates: siteUrl ? { canonical: "./" } : undefined,
+  alternates: { canonical: baseUrl },
   openGraph: {
     title: "Sri Harsha | Aspiring ML Engineer & Full-Stack Developer",
     description:
       "Architecting intelligent vision-language systems and high-performance full-stack web applications.",
-    url: siteUrl ? "./" : undefined,
+    url: baseUrl,
     siteName: "Sri Harsha Portfolio",
     type: "website",
     locale: "en_US",
@@ -60,11 +58,11 @@ export const metadata: Metadata = {
       "Architecting intelligent vision-language systems and high-performance full-stack web applications.",
   },
   robots: {
-    index: Boolean(siteUrl),
-    follow: Boolean(siteUrl),
+    index: true,
+    follow: true,
     googleBot: {
-      index: Boolean(siteUrl),
-      follow: Boolean(siteUrl),
+      index: true,
+      follow: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,

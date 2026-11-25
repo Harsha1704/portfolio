@@ -6,7 +6,7 @@ const CORE_PAGES_LASTMOD = new Date("2026-11-24T00:00:00.000Z");
 const CASE_STUDIES_LASTMOD = new Date("2026-11-23T00:00:00.000Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio-six-lake-12.vercel.app";
 
   // Core Top-Level Routes
   const staticRoutes: MetadataRoute.Sitemap = [
