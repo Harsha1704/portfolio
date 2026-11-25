@@ -13,7 +13,14 @@ export const ProjectsSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const prefersReduced = useReducedMotion();
 
-  const categories = ["All", "Multimodal AI", "Applied NLP & GenAI", "3D & Interactive Web", "Computer Vision"];
+  const categories = [
+    "All",
+    "Multimodal AI",
+    "Applied NLP & GenAI",
+    "Intelligent Systems",
+    "Computer Vision",
+    "3D & Interactive Web",
+  ];
 
   const filteredProjects =
     activeCategory === "All"

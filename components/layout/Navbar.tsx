@@ -3,10 +3,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/Button";
+import { LinkedinIcon } from "@/components/ui/Icons";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const NAV_ROUTES = [
@@ -245,14 +246,35 @@ export const Navbar: React.FC = () => {
               })}
             </div>
 
-            <div className="pt-4 border-t border-slate-200">
+            <div className="pt-4 border-t border-slate-200 flex flex-col gap-2.5">
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block w-full text-center py-3 bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-medium text-sm rounded-xl shadow-sm transition-all"
+                className="block w-full text-center py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-medium text-sm rounded-xl shadow-sm transition-all"
               >
                 Get in Touch with Sri Harsha
               </Link>
+              <div className="flex items-center gap-2">
+                <a
+                  href="/Sri_Harsha_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Sri_Harsha_Resume.pdf"
+                  className="flex-1 text-center py-2 px-3 bg-white border border-slate-200 hover:border-slate-300 text-slate-800 font-semibold text-xs rounded-xl shadow-2xs transition-all flex items-center justify-center gap-1.5"
+                >
+                  <Download className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <span>Download CV</span>
+                </a>
+                <a
+                  href="https://linkedin.com/in/sriharsha-jilla/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 text-center py-2 px-3 bg-[#0a66c2] hover:bg-[#004182] text-white font-semibold text-xs rounded-xl shadow-xs transition-all flex items-center justify-center gap-1.5"
+                >
+                  <LinkedinIcon className="w-3.5 h-3.5 fill-current shrink-0" />
+                  <span>LinkedIn</span>
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

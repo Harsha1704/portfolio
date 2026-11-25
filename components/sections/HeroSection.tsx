@@ -120,9 +120,10 @@ export const HeroSection: React.FC = () => {
               </div>
             </RevealOnScroll>
 
-            {/* Action Buttons & Prominent LinkedIn CTA */}
+            {/* Action Buttons: Clear Recruiter Primary Actions */}
             <RevealOnScroll delay={0.21}>
-              <div className="flex flex-wrap items-center gap-3 sm:gap-3.5 mb-10">
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-10">
+                {/* 1. Explore Projects */}
                 <Link
                   href="/projects"
                   className={buttonVariants({ variant: "primary", size: "md" })}
@@ -131,45 +132,45 @@ export const HeroSection: React.FC = () => {
                   <ArrowUpRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
 
-                {/* Prominent LinkedIn Contact CTA */}
+                {/* 2. Preview CV Modal */}
+                <button
+                  type="button"
+                  onClick={() => setIsCvModalOpen(true)}
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-slate-800 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50/80 rounded-xl shadow-2xs transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                  aria-label="Preview Sri Harsha CV in modal dialog"
+                  title="Preview CV in modal"
+                >
+                  <Eye className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>Preview CV</span>
+                </button>
+
+                {/* 3. Direct Download CV */}
+                <a
+                  href="/Sri_Harsha_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Sri_Harsha_Resume.pdf"
+                  aria-label="Download Sri Harsha CV / Resume (PDF)"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-slate-800 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50/80 rounded-xl shadow-2xs transition-all focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                  title="Direct Download (PDF)"
+                >
+                  <Download className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>Download CV</span>
+                </a>
+
+                {/* 4. Prominent LinkedIn CTA */}
                 <a
                   href="https://linkedin.com/in/sriharsha-jilla/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-xl bg-[#0a66c2] text-white hover:bg-[#004182] focus:ring-[#0a66c2] shadow-xs px-4 py-2 text-sm gap-2"
+                  className="inline-flex items-center justify-center font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-xl bg-[#0a66c2] text-white hover:bg-[#004182] focus:ring-[#0a66c2] shadow-xs px-4 py-2.5 text-sm gap-2"
                   aria-label="Connect with Sri Harsha on LinkedIn"
                 >
                   <LinkedinIcon className="w-4 h-4 shrink-0 fill-current" />
-                  <span>Connect on LinkedIn</span>
+                  <span>LinkedIn</span>
                 </a>
 
-                {/* CV Action Group: In-Browser Preview & Direct Download */}
-                <div className="inline-flex items-center rounded-xl border border-slate-200 bg-white shadow-2xs p-0.5">
-                  <button
-                    type="button"
-                    onClick={() => setIsCvModalOpen(true)}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-800 hover:text-blue-700 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer"
-                    aria-label="Preview Sri Harsha CV in modal dialog"
-                    title="Preview CV in modal"
-                  >
-                    <Eye className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                    <span>Preview CV</span>
-                  </button>
-                  <div className="h-4 w-px bg-slate-200" />
-                  <a
-                    href="/Sri_Harsha_Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    download="Sri_Harsha_Resume.pdf"
-                    aria-label="Download Sri Harsha CV / Resume (PDF)"
-                    className="inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
-                    title="Direct Download (PDF)"
-                  >
-                    <Download className="w-3.5 h-3.5 shrink-0" />
-                    <span className="sr-only sm:not-sr-only">Download</span>
-                  </a>
-                </div>
-
+                {/* Secondary Navigation */}
                 <Link
                   href="/about"
                   className={buttonVariants({ variant: "ghost", size: "md" })}
@@ -177,13 +178,13 @@ export const HeroSection: React.FC = () => {
                   About Me
                 </Link>
 
-                {/* Social Profile Link */}
+                {/* GitHub Social Profile Link */}
                 <div className="flex items-center pl-1 sm:pl-2 border-l border-slate-200">
                   <a
                     href="https://github.com/Harsha1704"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-xl border border-slate-200 bg-slate-50 text-slate-600 hover:text-slate-950 hover:bg-slate-100 hover:border-slate-300 transition-colors"
+                    className="p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-600 hover:text-slate-950 hover:bg-slate-100 hover:border-slate-300 transition-colors"
                     aria-label="Sri Harsha on GitHub (@Harsha1704)"
                     title="GitHub: github.com/Harsha1704"
                   >

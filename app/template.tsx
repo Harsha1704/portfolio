@@ -13,11 +13,16 @@ export default function Template({ children }: { children: React.ReactNode }) {
   const prefersReduced = useReducedMotion();
 
   if (prefersReduced) {
-    return <main className="flex-1 flex flex-col">{children}</main>;
+    return (
+      <main id="main-content" className="flex-1 flex flex-col">
+        {children}
+      </main>
+    );
   }
 
   return (
     <motion.main
+      id="main-content"
       className="flex-1 flex flex-col"
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}

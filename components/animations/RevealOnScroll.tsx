@@ -39,7 +39,7 @@ export const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
       className={cn(className)}
       initial={{ opacity: 0, ...initialOffset }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-10% 0px" }}
+      viewport={{ once: true, margin: "0px" }}
       transition={{
         duration: 0.5,
         delay: delay,

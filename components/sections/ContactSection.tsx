@@ -203,9 +203,14 @@ export const ContactSection: React.FC = () => {
               {/* Transparent Delivery Notice */}
               <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-100 mb-6 flex items-start gap-3">
                 <Info className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" />
-                <p className="text-xs text-blue-800 leading-relaxed">
-                  <strong>Interface Demo Mode:</strong> Direct submission is temporarily disabled pending live delivery service configuration (e.g. Resend or Formspree). Please check back once official contact endpoints are activated.
-                </p>
+                <div className="text-xs text-blue-800 leading-relaxed space-y-2">
+                  <p>
+                    <strong>Interface Demo Notice:</strong> Direct form transmission is temporarily disabled pending production webhook routing (e.g., Resend or Formspree).
+                  </p>
+                  <p>
+                    For recruitment inquiries and urgent engineering discussions, please connect directly via <strong>LinkedIn</strong> or <strong>GitHub</strong>.
+                  </p>
+                </div>
               </div>
 
               <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
@@ -266,7 +271,7 @@ export const ContactSection: React.FC = () => {
                   />
                 </div>
 
-                <div className="pt-2">
+                <div className="pt-2 space-y-3">
                   <Button
                     type="button"
                     variant="primary"
@@ -274,9 +279,22 @@ export const ContactSection: React.FC = () => {
                     className="w-full opacity-60 cursor-not-allowed"
                     disabled
                   >
-                    Submission Disabled (Integration Pending)
+                    Direct Form Submission Disabled
                   </Button>
-                  <p className="text-[11px] font-mono text-center text-slate-400 mt-2">
+
+                  <a
+                    href="https://linkedin.com/in/sriharsha-jilla/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-[#0a66c2] hover:bg-[#004182] text-white font-semibold text-xs sm:text-sm transition-colors shadow-xs"
+                    aria-label="Message Sri Harsha on LinkedIn"
+                  >
+                    <LinkedinIcon className="w-4 h-4 fill-current shrink-0" />
+                    <span>Message Directly on LinkedIn</span>
+                    <ExternalLink className="w-3.5 h-3.5 ml-0.5" />
+                  </a>
+
+                  <p className="text-[11px] font-mono text-center text-slate-400">
                     Direct transmission disabled until verified backend routing is activated.
                   </p>
                 </div>
