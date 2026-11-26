@@ -7,7 +7,7 @@ import { ProjectsSection } from "@/components/sections/ProjectsSection";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Explore Sri Harsha's engineering projects: SatQuery AI, ResumeMatch AI, 3D Bharat, MoodMate, and TrafficShield with detailed architecture specifications.",
+    "Explore Sri Harsha's engineering projects: SatQuery AI, ResumeMatch AI, Employee Attrition Risk Prediction, TrafficShield, MoodMate, Distributed File System, and 3D Bharat with detailed architecture specifications.",
 };
 
 export default function ProjectsPage() {

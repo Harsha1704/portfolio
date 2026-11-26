@@ -535,6 +535,303 @@ export const projectsData: Project[] = [
     ],
   },
   {
+    id: "employee-attrition-risk-prediction",
+    slug: "employee-attrition-risk-prediction",
+    title: "Employee Attrition Risk Prediction",
+    subtitle: "Enterprise HR Analytics, ML Risk Scoring & Explainable AI Retention Platform",
+    category: "Machine Learning / Predictive Analytics / Explainable AI",
+    status: "prototype",
+    statusLabel: "Prototype / Local Development",
+    summary:
+      "An HR analytics and machine-learning platform that predicts employee attrition risk, explains contributing factors via SHAP interpretability, and provides actionable retention recommendations through an interactive 8-tab Streamlit analytics dashboard.",
+    tags: [
+      "Machine Learning",
+      "Explainable AI (XAI)",
+      "SHAP",
+      "Python",
+      "Scikit-learn",
+      "XGBoost",
+      "LightGBM",
+      "CatBoost",
+      "Streamlit",
+      "Pandas",
+    ],
+    liveUrl: null,
+    repoUrl: "https://github.com/Harsha1704/Employee_Attrition_Risk_Prediction",
+    timeline: "2024",
+    featured: false,
+    order: 3,
+    objectives: [
+      "Predict individual employee turnover probability to identify flight risks before departure occurs.",
+      "Demystify complex tree ensemble predictions using local and global SHAP (SHapley Additive exPlanations) values.",
+      "Address severe class imbalance inherent to attrition datasets using SMOTE-family oversampling strategies.",
+      "Translate raw model risk probabilities into concrete, department-tailored HR retention playbooks and Power BI exports.",
+    ],
+    problemStatement: {
+      context:
+        "Voluntary employee turnover imposes substantial direct and indirect costs on enterprises—averaging 1.5x–2x an employee's annual salary across recruiting, onboarding, and domain knowledge loss. Traditional HR management relies on lagging exit interviews rather than proactive predictive intelligence.",
+      coreChallenge:
+        "HR attrition data is intrinsically imbalanced (typically 15%–17% attrition baseline) and presents intricate non-linear relationships across compensation, overtime burden, work-life balance, and managerial tenure. Black-box models without interpretability are unusable by HR business partners due to compliance and trust constraints.",
+      engineeringGoal:
+        "Develop an end-to-end predictive and explainable pipeline that benchmarks 14+ classifiers, handles class skew with Borderline-SMOTE, computes real-time SHAP force plots, and exposes risk heatmaps and recommendations in an intuitive multi-tab console.",
+    },
+    architectureSummary:
+      "A staged machine-learning workflow encompassing automated data cleaning, 20+ HR-domain feature engineering ratios, Mutual Information feature selection, SMOTE resampling, multi-model benchmarking (XGBoost, LightGBM, CatBoost), SHAP explainability, and interactive Streamlit UI delivery.",
+    architectureLayers: [
+      {
+        layer: "Data Ingestion & Hygiene",
+        component: "IBM HR Dataset Ingestion & Validation",
+        details: "Ingests 1,470 records and 35 original employee attributes; validates missing values, cardinality, and numerical distributions.",
+        status: "implemented",
+      },
+      {
+        layer: "Feature Engineering & Selection",
+        component: "20+ Domain Ratios & Mutual Information Filter",
+        details: "Synthesizes TotalSatisfaction, StabilityRatio, TenurePerJob, and CompensationRatio; ranks feature importance using Mutual Information scores.",
+        status: "implemented",
+      },
+      {
+        layer: "Resampling & Balancing",
+        component: "imbalanced-learn SMOTE-Family Pipeline",
+        details: "Mitigates the 16.1% attrition minority skew using SMOTE, Borderline-SMOTE, and ADASYN within StratifiedKFold validation splits.",
+        status: "implemented",
+      },
+      {
+        layer: "Ensemble Training & Tuning",
+        component: "14+ Classifier Benchmark Engine",
+        details: "Systematic evaluation of XGBoost, LightGBM, CatBoost, Random Forest, Extra Trees, and Logistic Regression with RandomizedSearchCV hyperparameter optimization.",
+        status: "implemented",
+      },
+      {
+        layer: "Explainable AI (XAI)",
+        component: "SHAP TreeExplainer & Permutation Importance",
+        details: "Computes local feature contribution waterfalls for individual employees and global summary plots across organizational units.",
+        status: "implemented",
+      },
+      {
+        layer: "Analytics & Presentation",
+        component: "8-Tab Streamlit Dashboard & Power BI Exporter",
+        details: "Interactive UI for single employee inference, bulk CSV batch scoring, department risk heatmaps, retention recommendations, and structured CSV exports.",
+        status: "implemented",
+      },
+    ],
+    systemFlowDiagram: {
+      title: "Employee Attrition ML Pipeline & Explainability Architecture",
+      caption: "End-to-end data transformation, multi-classifier training, SHAP feature attribution, and interactive Streamlit decision dashboard.",
+      explanation: "Raw employee HR records pass through automated data sanitation and domain feature engineering. The imbalanced training split is resampled via SMOTE and fed into hyperparameter-tuned gradient boosted trees. Inference outputs generate dual deliverables: calibrated attrition probability scores and granular SHAP force plots consumed by the 8-tab Streamlit console.",
+      steps: [
+        {
+          stage: "Data Ingestion",
+          title: "IBM HR Dataset Parsing",
+          component: "Pandas Ingestion & Cleaning Engine",
+          description: "Parses 1,470 records across 35 attributes, cleaning zero-variance constants and verifying data integrity.",
+          status: "implemented",
+          badgeText: "1,470 Records",
+        },
+        {
+          stage: "Featurization",
+          title: "20+ HR-Domain Feature Engineering",
+          component: "Mutual Information & Ratio Synthesizer",
+          description: "Computes satisfaction composites, tenure-to-age ratios, and compensation parity indices; prunes collinear features.",
+          status: "implemented",
+          badgeText: "20+ Ratios",
+        },
+        {
+          stage: "Model Training",
+          title: "14+ Classifiers & SMOTE Resampling",
+          component: "XGBoost, LightGBM, CatBoost Benchmark",
+          description: "Trains candidate classifiers under Stratified 5-Fold CV with RandomizedSearchCV tuning and minority oversampling.",
+          status: "implemented",
+          badgeText: "14+ Classifiers",
+        },
+        {
+          stage: "Explainability",
+          title: "SHAP Interpretability Engine",
+          component: "TreeExplainer Attribution Core",
+          description: "Calculates Shapley values to pinpoint dominant attrition drivers (OverTime, MonthlyIncome, StockOptions).",
+          status: "implemented",
+          badgeText: "SHAP / XAI",
+        },
+        {
+          stage: "Analytics UI",
+          title: "8-Tab Streamlit Console & Export",
+          component: "Interactive Operational Dashboard",
+          description: "Delivers single/batch risk scoring, department risk heatmaps, actionable HR playbooks, and Power BI-ready CSV export.",
+          status: "implemented",
+          badgeText: "8-Tab UI",
+        },
+      ],
+    },
+    mlServing: {
+      pipelineTitle: "Employee Attrition Predictive Inference & Interpretability Flow",
+      pipelineDescription: "How employee profile vectors are ingested, engineered, evaluated through serialized tree ensembles, and converted into explainable retention insights.",
+      dataInput: {
+        title: "Employee Profile & Batch CSV Ingestion",
+        description: "Streamlit UI accepts individual employee parameter inputs via interactive sliders/dropdowns or multi-employee batch CSV uploads.",
+      },
+      featureAndInference: {
+        title: "Dynamic Ratio Transformation & Model Inference",
+        description: "Precomputed transformers construct domain ratios, apply ordinal encodings, and invoke the best-performing serialized model artifact (e.g., tuned LightGBM/CatBoost).",
+      },
+      backendIntegration: {
+        title: "SHAP TreeExplainer Calculation & Thresholding",
+        description: "Backend computes exact Shapley contribution vectors for the employee, mapping positive/negative pressure on the calibrated attrition boundary.",
+      },
+      frontendCommunication: {
+        title: "Risk Category Binning & Factor Ranking",
+        description: "Probabilities are categorized into Low, Medium, and High Risk tiers alongside the top 5 push/pull factors influencing the score.",
+      },
+      outputVisualization: {
+        title: "Interactive Risk Gauge, SHAP Waterfall & Retention Guidance",
+        description: "Renders visual risk gauges, interactive SHAP force plots, department attrition heatmaps, and rule-based HR intervention checklists.",
+      },
+      operationalCaveat: "Evaluated on the benchmark IBM HR dataset in a local Streamlit runtime; representative metrics reflect experimental benchmark conditions.",
+    },
+    mermaidDiagram: `flowchart TD
+    A[Raw IBM HR Dataset 1,470 Records] --> B[Data Cleaning & Outlier Analysis]
+    B --> C[Feature Engineering: 20+ Domain Ratios]
+    C --> D[Mutual Information Feature Selection]
+    D --> E[Train/Test Split & SMOTE Balancing]
+    E --> F[14+ Classifier Benchmark Engine]
+    F --> G[Best Model: Tuned Gradient Boosted Trees]
+    G --> H[SHAP TreeExplainer Local & Global Attribution]
+    G --> I[Risk Probability Scoring Engine]
+    H --> J[8-Tab Interactive Streamlit Dashboard]
+    I --> J
+    J --> K[Power BI-Ready CSV Export]`,
+    implementationSections: [
+      {
+        title: "HR-Domain Feature Engineering & Information-Theoretic Selection",
+        description:
+          "Raw HR survey attributes often hide compound behavioral signals. Engineered 20+ non-linear domain features capturing career momentum, compensation equity, and burnout risk.",
+        items: [
+          "Satisfaction Composites: Combines EnvironmentSatisfaction, JobSatisfaction, and RelationshipSatisfaction into aggregated TotalSatisfaction.",
+          "Career Velocity Metrics: Formulated TenurePerJob (YearsAtCompany / NumCompaniesWorked) and PromotionVelocity (YearsSinceLastPromotion / YearsAtCompany).",
+          "Work-Life Stress Index: Coupled OverTime indicators with DistanceFromHome and BusinessTravel frequency to quantify operational fatigue.",
+          "Mutual Information Pruning: Ranked all candidate features against the attrition target, eliminating zero-variance attributes (Over18, StandardHours).",
+        ],
+      },
+      {
+        title: "Imbalance Mitigation & 14+ Classifier Benchmark Architecture",
+        description:
+          "Because voluntary turnover is a minority event (16.1% prevalence), naive accuracy is misleading. Implemented a rigorous cross-validation and resampling framework.",
+        items: [
+          "Resampling Strategies: Compared SMOTE, Borderline-SMOTE, and ADASYN to synthesize minority examples near decision boundaries without overfitting.",
+          "Multi-Model Tournament: Benchmarked 14+ algorithms including XGBoost, LightGBM, CatBoost, Random Forest, AdaBoost, Gradient Boosting, Extra Trees, and Logistic Regression.",
+          "Robust Validation: Enforced 5-fold Stratified K-Fold cross-validation paired with RandomizedSearchCV for hyperparameter exploration across learning rate, tree depth, and subsample ratios.",
+          "Threshold Calibration: Adjusted decision cutoffs to balance recall (catching true flight risks) against precision (minimizing false alarms for HR teams).",
+        ],
+      },
+      {
+        title: "Explainable AI (XAI) & Actionable Retention Recommendation Engine",
+        description:
+          "Predictive models cannot guide retention strategies without causal transparency. Integrated SHAP to provide granular, interpretable explanations for every prediction.",
+        items: [
+          "Local Explanations: Deployed SHAP TreeExplainer to produce individual waterfall plots detailing exactly which attributes increased or decreased turnover risk.",
+          "Global Feature Importance: Aggregated Shapley values identifying organization-wide turnover drivers (OverTime, MonthlyIncome, Age, and TotalWorkingYears).",
+          "Automated HR Action Playbook: Built rule-based retention triggers suggesting tailored counter-measures (e.g., commute relief, compensation review, lateral project moves).",
+          "Enterprise BI Compatibility: Structured batch inference outputs into formatted CSV tables pre-configured for import into corporate Power BI dashboards.",
+        ],
+      },
+    ],
+    screenshots: [
+      {
+        id: "attrition-1",
+        title: "Interactive Attrition Risk Console",
+        caption: "Streamlit analytics dashboard tab illustrating employee profile input, calculated attrition probability, and risk tier categorization.",
+        tag: "Analytics UI",
+        placeholderType: "dashboard",
+      },
+      {
+        id: "attrition-2",
+        title: "SHAP Explainability & Waterfall Attribution",
+        caption: "Visual interpretability tab displaying local feature contributions and SHAP summary plots pinpointing key departure drivers.",
+        tag: "Explainable AI",
+        placeholderType: "pipeline",
+      },
+      {
+        id: "attrition-3",
+        title: "Department Heatmaps & Retention Guidance",
+        caption: "Aggregated department risk heatmaps paired with automated, role-specific retention recommendation checklists.",
+        tag: "HR Strategy",
+        placeholderType: "telemetry",
+      },
+    ],
+    implementedFeatures: [
+      "End-to-end preprocessing pipeline for IBM HR Analytics dataset (1,470 employees, 35 attributes).",
+      "Synthesis of 20+ HR-domain features including stability ratios, satisfaction composites, and compensation equity indices.",
+      "Mutual Information feature selection eliminating redundant and non-informative survey variables.",
+      "SMOTE-family class imbalance handling (SMOTE, Borderline-SMOTE, ADASYN) within cross-validation splits.",
+      "Benchmarking harness across 14+ machine learning classifiers with hyperparameter tuning via RandomizedSearchCV.",
+      "SHAP TreeExplainer integration providing individual waterfall plots and global feature attribution rankings.",
+      "Comprehensive 8-tab Streamlit dashboard supporting single-employee simulation and multi-employee batch CSV scoring.",
+      "Department-level risk heatmaps, attrition analytics visualizations, and automated HR retention recommendation playbooks.",
+      "Power BI-ready structured CSV export functionality for enterprise reporting.",
+    ],
+    plannedFeatures: [
+      "Survival analysis (Cox Proportional Hazards) to model time-to-departure rather than binary turnover probability.",
+      "FastAPI microservice containerization with REST endpoints for HRIS (Workday / BambooHR) webhook integration.",
+      "Counterfactual explanation generator to compute the minimal policy change required to flip high-risk employees to safe status.",
+      "Integration with natural language employee feedback sentiment analysis to combine survey metrics with unstructured text.",
+    ],
+    techStack: [
+      { category: "Machine Learning & Resampling", items: ["Scikit-learn", "XGBoost", "LightGBM", "CatBoost", "imbalanced-learn (SMOTE)", "RandomizedSearchCV"] },
+      { category: "Explainable AI & Analysis", items: ["SHAP (SHapley Additive exPlanations)", "Mutual Information", "Permutation Importance", "NumPy", "Pandas"] },
+      { category: "Dashboard & Visualization", items: ["Streamlit (8-Tab Console)", "Matplotlib", "Seaborn", "Plotly"] },
+      { category: "Environment & Serialization", items: ["Python 3.10+", "Joblib / Pickle", "Git", "Power BI CSV Integration"] },
+    ],
+    challenges: [
+      {
+        challenge: "Balancing precision versus recall under severe class imbalance (16.1% turnover baseline) with asymmetric operational costs.",
+        solution: "Analyzed the business-critical precision/recall trade-off: failing to detect an employee who subsequently resigns (false negative) inflicts substantial turnover and re-hiring costs (~1.5x salary), whereas flagging a satisfied employee (false positive) expends HR retention interventions. Tuned classification probability cutoffs across StratifiedKFold validation splits to prioritize higher minority recall while maintaining actionable precision.",
+      },
+      {
+        challenge: "Black-box nature of advanced gradient boosting ensembles preventing adoption by risk-averse HR business partners.",
+        solution: "Integrated SHAP TreeExplainer to compute exact additive feature attributions for every inference, rendering visual waterfall plots that clearly justify each risk score.",
+      },
+      {
+        challenge: "Collinearity and noise across 35 multi-scale survey questions and demographic attributes.",
+        solution: "Formulated domain-specific composite ratios and applied Mutual Information filtering to isolate high-leverage predictive factors while discarding uninformative constants.",
+      },
+    ],
+    metrics: [
+      { label: "Reported Performance", value: "Representative README Results" },
+      { label: "Metric Evaluation", value: "ROC-AUC ~0.84–0.88 (Unreproduced)" },
+      { label: "Optimization Target", value: "Precision/Recall Trade-off" },
+      { label: "Explainability", value: "SHAP (TreeExplainer)" },
+    ],
+    resultsAndLimitations: {
+      results: [
+        "Presents representative model benchmark results cited from the repository README on the IBM HR dataset (e.g., ensemble test ROC-AUC ~0.84–0.88, balanced minority recall); these reflect the author's experimental trials and are not presented as independently reproduced production guarantees.",
+        "Delivers transparent feature attribution through local and global SHAP explanations, highlighting OverTime, MonthlyIncome, and StockOptionLevel as primary attrition catalysts in the benchmark dataset.",
+        "Operationalizes predictive scoring through an interactive 8-tab Streamlit dashboard supporting single-employee what-if testing, batch CSV predictions, and Power BI-ready exports.",
+      ],
+      limitations: [
+        "Reported model metrics are representative results documented in the repository README rather than independently audited or reproduced benchmarks.",
+        "The precision/recall trade-off requires distinct operational calibration per company: organizations with high intervention costs require higher precision, whereas talent-scarce teams prioritize recall.",
+        "Evaluated on the synthetic IBM HR Analytics benchmark dataset; real-world enterprise adoption requires retraining and validation on live corporate HRIS data distributions.",
+        "Packaged as an interactive local Streamlit application rather than a deployed multi-tenant cloud enterprise service.",
+      ],
+    },
+    roadmap: [
+      {
+        phase: "Phase 1 (Completed)",
+        title: "Data Pipeline, 14+ Model Benchmark & SHAP Integration",
+        description: "Delivered data preprocessing, 20+ feature engineering ratios, SMOTE resampling, multi-model evaluation, and SHAP explainability.",
+      },
+      {
+        phase: "Phase 2 (Completed)",
+        title: "8-Tab Streamlit Console & Batch Scoring",
+        description: "Constructed comprehensive multi-tab UI for individual risk scoring, batch CSV inference, risk heatmaps, and Power BI export.",
+      },
+      {
+        phase: "Phase 3 (Roadmap)",
+        title: "Survival Modeling & Enterprise HRIS Webhooks",
+        description: "Incorporate time-to-event survival analysis, counterfactual recommendations, and FastAPI microservice integration with Workday.",
+      },
+    ],
+  },
+  {
     id: "trafficshield",
     slug: "trafficshield",
     systemFlowDiagram: {
@@ -622,7 +919,7 @@ export const projectsData: Project[] = [
     repoUrl: "https://github.com/Harsha1704/trafficshield",
     timeline: "2024 - Present",
     featured: true,
-    order: 3,
+    order: 4,
     objectives: [
       "Engineer a unidirectional flow anomaly detection platform tailored for physical data diodes and optical taps.",
       "Enforce a strict 13 forward-observable packet feature policy with zero reverse-flow telemetry requirements.",
@@ -832,7 +1129,7 @@ export const projectsData: Project[] = [
     repoUrl: "https://github.com/Harsha1704/MoodMate",
     timeline: "2024",
     featured: true,
-    order: 4,
+    order: 5,
     objectives: [
       "Build an end-to-end affective computing pipeline linking facial expression recognition to mood-adaptive acoustic recommendations.",
       "Target real-time face detection and emotion classification on standard laptop webcams without dedicated GPUs (unbenchmarked target).",
@@ -1012,6 +1309,288 @@ export const projectsData: Project[] = [
     ],
   },
   {
+    id: "distributed-file-system",
+    slug: "distributed-file-system",
+    title: "Distributed File System with Fault Tolerance",
+    subtitle: "Python Socket-Based Replicated Storage Engine with Automatic Node Recovery & SHA-256 Integrity",
+    category: "Operating Systems / Distributed Systems",
+    status: "prototype",
+    statusLabel: "Prototype / Local Development",
+    summary:
+      "A Python-based distributed file storage system that distributes file chunks across multiple storage nodes and provides 3-way replication, node failure detection via TCP/UDP heartbeat mechanisms, automatic re-replication recovery, and cryptographic SHA-256 data integrity verification.",
+    tags: [
+      "Distributed Systems",
+      "Operating Systems",
+      "Python",
+      "TCP/IP Sockets",
+      "TCP/UDP Heartbeats",
+      "Multithreading",
+      "Fault Tolerance",
+      "SHA-256",
+      "JSON Persistence",
+    ],
+    liveUrl: null,
+    repoUrl: "https://github.com/Harsha1704/Distributed-File-System-with-Fault-Tolerance",
+    timeline: "2024",
+    featured: false,
+    order: 6,
+    objectives: [
+      "Implement a robust Master-Worker distributed storage topology capable of splitting large files into discrete chunks across nodes.",
+      "Guarantee high availability and data durability through three-way replication (Replication Factor RF = 3).",
+      "Detect storage node crashes in real time using asynchronous TCP/UDP heartbeat monitoring mechanisms without network congestion.",
+      "Orchestrate automatic re-replication healing to restore the target replication factor upon node failure detection.",
+      "Prevent silent bit rot and network corruption using cryptographic SHA-256 chunk and file checksum validation.",
+    ],
+    problemStatement: {
+      context:
+        "Large-scale distributed systems must store and retrieve massive datasets across commodity machines where hardware failures (disk crashes, power outages, network partitions) are the norm rather than an exception.",
+      coreChallenge:
+        "Coordinating file chunk distribution across multiple independent storage nodes while maintaining metadata consistency, detecting unresponsive nodes quickly without false alarms, and automatically healing degraded replication states without human intervention.",
+      engineeringGoal:
+        "Architect a pure-Python distributed file system inspired by Google File System (GFS) and HDFS, featuring a centralized thread-safe Master server, multi-node chunk storage, dual TCP data transfer and TCP/UDP heartbeat networking, and automatic self-healing replication.",
+    },
+    architectureSummary:
+      "A centralized Master-Worker distributed architecture utilizing a thread-safe Master server for chunk placement and namespace management, multiple independent Storage Nodes for block persistence, and a CLI Client utilizing connection-oriented TCP sockets for reliable chunk streaming and TCP/UDP heartbeat pulses for health monitoring.",
+    architectureLayers: [
+      {
+        layer: "Client Interface",
+        component: "Interactive CLI Client",
+        details: "Provides command-line primitives: upload, download, list, delete, and node failure simulation with automated chunk splitting and reconstruction.",
+        status: "implemented",
+      },
+      {
+        layer: "Coordination & Metadata",
+        component: "Master Server & Namespace Manager",
+        details: "Thread-safe metadata registry maintaining file-to-chunk mappings, node status tables, and atomic JSON snapshot persistence.",
+        status: "implemented",
+      },
+      {
+        layer: "Transport & Health Protocol",
+        component: "TCP Data Transfer & TCP/UDP Heartbeat Layer",
+        details: "High-throughput connection-oriented TCP sockets for reliable file chunk data transfer; lightweight TCP/UDP heartbeat pulses for periodic node health checks.",
+        status: "implemented",
+      },
+      {
+        layer: "Storage Node Cluster",
+        component: "Multi-Process Storage Node Daemons",
+        details: "Independent storage worker daemons managing local chunk directories, servicing chunk write/read requests, and transmitting periodic heartbeats.",
+        status: "implemented",
+      },
+      {
+        layer: "Fault Detection & Self-Healing",
+        component: "Heartbeat Monitor & Re-Replication Worker",
+        details: "Asynchronous background daemon monitoring node timestamps; triggers automated chunk migration to healthy nodes when RF drops below 3.",
+        status: "implemented",
+      },
+      {
+        layer: "Integrity & Anti-Tamper",
+        component: "SHA-256 Verification Engine",
+        details: "Computes cryptographic hashes during chunking; validates integrity at storage write and client-side pre-assembly to eliminate corruption.",
+        status: "implemented",
+      },
+    ],
+    systemFlowDiagram: {
+      title: "Master-Node Distributed Storage & Automatic Healing Pipeline",
+      caption: "File chunking, 3-way replicated placement, UDP health monitoring, and automated re-replication workflow.",
+      explanation: "Clients split files into fixed chunks and query the Master for placement on 3 distinct storage nodes. Chunks are streamed via TCP with SHA-256 checksums. Storage nodes transmit continuous UDP heartbeats to the Master. If a node fails, the Master detects the missed heartbeats, identifies under-replicated chunks, and commands an active node to copy replicas to a healthy node.",
+      steps: [
+        {
+          stage: "Ingestion",
+          title: "File Chunking & SHA-256 Hashing",
+          component: "Client Chunking Processor",
+          description: "Divides uploaded files into discrete binary chunks and computes SHA-256 checksums for each chunk and the whole file.",
+          status: "implemented",
+          badgeText: "Chunking + SHA-256",
+        },
+        {
+          stage: "Placement",
+          title: "Master Metadata & Node Allocation",
+          component: "Master Metadata Registry",
+          description: "Allocates 3 distinct healthy storage nodes per chunk to satisfy Replication Factor RF = 3 and records mappings atomically.",
+          status: "implemented",
+          badgeText: "RF = 3 Topology",
+        },
+        {
+          stage: "Storage Transfer",
+          title: "Parallel TCP Chunk Streaming",
+          component: "TCP Socket Transfer Layer",
+          description: "Streams chunk byte arrays directly to allocated storage nodes; nodes persist blocks and acknowledge successful write.",
+          status: "implemented",
+          badgeText: "TCP Streaming",
+        },
+        {
+          stage: "Health Monitor",
+          title: "Periodic UDP Heartbeat Tracking",
+          component: "UDP Heartbeat Daemon",
+          description: "Storage nodes broadcast periodic UDP pulses; Master tracks last-seen timestamps and flags nodes dead if timeout expires.",
+          status: "implemented",
+          badgeText: "UDP Heartbeats",
+        },
+        {
+          stage: "Self-Healing",
+          title: "Automated Re-Replication Recovery",
+          component: "Re-Replication Engine",
+          description: "When a node crash is declared, Master locates surviving chunk copies and instructs an active node to re-replicate to restore RF = 3.",
+          status: "implemented",
+          badgeText: "Auto Self-Healing",
+        },
+      ],
+    },
+    mermaidDiagram: `flowchart TD
+    Client[Client CLI: Upload / Download / List / Delete]
+    Master[Master Server: Metadata Registry & Health Monitor]
+    Node1[Storage Node 1]
+    Node2[Storage Node 2]
+    Node3[Storage Node 3]
+    Node4[Storage Node 4 - Standby]
+
+    Client -->|1. Request Chunk Placement| Master
+    Master -->|2. Return Target Node List RF=3| Client
+    Client -->|3. TCP Stream Chunk A| Node1
+    Client -->|3. TCP Stream Chunk A| Node2
+    Client -->|3. TCP Stream Chunk A| Node3
+
+    Node1 -.->|UDP Heartbeat| Master
+    Node2 -.->|UDP Heartbeat| Master
+    Node3 -.->|UDP Heartbeat| Master
+    Node4 -.->|UDP Heartbeat| Master
+
+    Node2 -.->|Node 2 Fails / Heartbeat Timeout| Master
+    Master -->|4. Trigger Re-Replication: Copy Chunk A to Node 4| Node1
+    Node1 -->|5. Transfer Replicated Chunk A| Node4`,
+    implementationSections: [
+      {
+        title: "Master-Node Architecture & Thread-Safe Metadata Management",
+        description:
+          "The Master server acts as the centralized coordinator, tracking file namespaces, chunk locations, and storage node liveness while remaining free of heavy chunk transfer traffic.",
+        items: [
+          "Thread-Safe In-Memory State: Utilizes threading locks (Lock / RLock) to synchronize concurrent client metadata modifications and prevent race conditions.",
+          "Atomic JSON Persistence: Metadata snapshots are committed to disk atomically to ensure system recovery without corrupted state following Master process restarts.",
+          "Chunk Placement Table: Maps each logical file to an ordered array of chunk IDs, with each chunk ID mapped to a set of physical Storage Node network addresses.",
+          "Decoupled Data Plane: Clients communicate with the Master strictly for metadata; actual chunk payloads flow directly between Client and Storage Nodes over TCP.",
+        ],
+      },
+      {
+        title: "Three-Way Replication (RF = 3) & Automatic Failure Recovery",
+        description:
+          "High availability is guaranteed by enforcing a constant Replication Factor of 3 across all stored chunks, combined with autonomous node failure detection and repair.",
+        items: [
+          "Dual Networking Protocols: Employs lightweight UDP datagrams for frequent node heartbeats (minimizing overhead) and connection-oriented TCP sockets for reliable chunk I/O.",
+          "Heartbeat Timeout Daemon: Master runs a background monitor thread auditing storage node timestamps. A node missing heartbeats beyond the configured threshold is marked dead.",
+          "Automated Re-Replication: Master scans the chunk placement table for chunks hosted on the failed node, finds surviving replicas on healthy nodes, and commands a copy to an under-utilized node to restore RF = 3.",
+          "Failure Simulation CLI: Built-in command options allow operators to purposefully kill or disconnect storage nodes to demonstrate live re-replication and continuous read availability.",
+        ],
+      },
+      {
+        title: "Chunking, Reconstruction & Cryptographic SHA-256 Integrity",
+        description:
+          "Data integrity is verified end-to-end to protect against network bit flips, partial transmissions, and silent on-disk corruption.",
+        items: [
+          "Fixed-Size Chunking: Client divides incoming files into fixed-size chunks with sequential numbering, enabling parallel multi-node distribution.",
+          "Per-Chunk SHA-256 Checksums: Every chunk calculates an independent SHA-256 hash at creation, stored in Master metadata and validated by the Storage Node upon write.",
+          "Client-Side Reconstruction Verification: During file download, client retrieves chunks from accessible replica nodes, validates each chunk's SHA-256, reassembles the binary stream, and verifies the whole-file hash.",
+          "CLI File Operations: Supports full lifecycle storage commands including upload, download, list files/nodes, delete with replica cleanup, and cluster status inspection.",
+        ],
+      },
+    ],
+    screenshots: [
+      {
+        id: "dfs-1",
+        title: "Distributed File System Cluster Topology",
+        caption: "Architecture layout illustrating Master server coordination, 3-way replication across storage nodes, and dual TCP/UDP communication channels.",
+        tag: "Cluster Topology",
+        placeholderType: "pipeline",
+      },
+      {
+        id: "dfs-2",
+        title: "Node Failure Detection & Re-Replication Console",
+        caption: "Terminal telemetry illustrating UDP heartbeat timeout detection, degraded replication state identification, and automatic re-replication recovery.",
+        tag: "Fault Tolerance",
+        placeholderType: "telemetry",
+      },
+      {
+        id: "dfs-3",
+        title: "CLI Operations & Integrity Verification",
+        caption: "Interactive CLI interface demonstrating chunk splitting, SHA-256 checksum validation, file reconstruction, and cluster status reporting.",
+        tag: "CLI Console",
+        placeholderType: "dashboard",
+      },
+    ],
+    implementedFeatures: [
+      "Master server managing file-to-chunk metadata, storage node registries, and chunk allocation tables.",
+      "Three-way chunk replication (RF = 3) ensuring continuous data availability through node outages.",
+      "File chunking engine splitting files into discrete binary blocks and reassembling them on download.",
+      "Dual-channel networking: reliable TCP socket streams for chunk data and connectionless UDP for heartbeats.",
+      "Heartbeat-based node failure detection daemon auditing node liveness timestamps in the background.",
+      "Automatic re-replication mechanism transferring chunks from surviving nodes to healthy nodes upon node crash.",
+      "End-to-end cryptographic SHA-256 verification per chunk and for full-file reconstruction.",
+      "Thread-safe in-memory Master state synchronized with atomic JSON metadata persistence.",
+      "Full-featured CLI operations supporting file upload, download, file listing, file deletion, and cluster status.",
+      "Interactive node failure simulation tool for verifying fault tolerance in local development.",
+    ],
+    plannedFeatures: [
+      "Raft consensus protocol implementation to replace the single Master and eliminate the single point of failure (SPOF).",
+      "Dynamic chunk rebalancing algorithm to equalize disk space utilization across heterogeneous storage nodes.",
+      "Reed-Solomon erasure coding as an alternative to 3-way replication to reduce storage overhead while preserving fault tolerance.",
+      "gRPC / Protobuf transport layer migration to optimize serialization throughput over high-latency networks.",
+    ],
+    techStack: [
+      { category: "Core Systems & Networking", items: ["Python 3.10+", "TCP/IP Sockets", "UDP Datagrams", "SocketServer"] },
+      { category: "Concurrency & Synchronization", items: ["threading (Thread, Lock, RLock)", "Concurrent Connection Handlers"] },
+      { category: "Data Integrity & Storage", items: ["hashlib (SHA-256)", "Binary Stream I/O", "Atomic JSON Persistence"] },
+      { category: "Tools & Testing", items: ["CLI Interface (argparse / cmd)", "Node Failure Simulator", "Git"] },
+    ],
+    challenges: [
+      {
+        challenge: "Preventing race conditions and split metadata state during concurrent file uploads and node registrations.",
+        solution: "Enforced thread-safe reentrant locks around Master metadata tables and coupled updates with atomic write-and-rename JSON persistence.",
+      },
+      {
+        challenge: "Detecting dead storage nodes promptly without saturating the network with continuous connection overhead.",
+        solution: "Implemented a dual-channel communication architecture: utilizing reliable TCP sockets for data streaming (chunk upload, download, and re-replication) while tracking storage node liveness via periodic TCP/UDP heartbeat mechanisms.",
+      },
+      {
+        challenge: "Guaranteeing zero silent data corruption (bit rot) across distributed chunk storage nodes.",
+        solution: "Embedded SHA-256 checksums in Master metadata for every individual chunk and the aggregate file, verifying hashes both upon node receipt and client reassembly.",
+      },
+    ],
+    metrics: [
+      { label: "Replication Factor", value: "RF = 3 (Configurable)" },
+      { label: "Transport Protocols", value: "TCP (Data) + TCP/UDP (Heartbeats)" },
+      { label: "Integrity Standard", value: "Cryptographic SHA-256" },
+      { label: "Recovery Mode", value: "Automatic Re-Replication" },
+    ],
+    resultsAndLimitations: {
+      results: [
+        "Verified successful automatic re-replication: when any storage node is terminated, the Master promptly detects missed heartbeats and restores RF = 3 on surviving nodes.",
+        "Verified chunk-level and file-level SHA-256 checksum validation, successfully detecting simulated payload tampering during client download.",
+        "Demonstrated clean multi-process operation running Master and multiple independent storage nodes concurrently on local loopback.",
+      ],
+      limitations: [
+        "Features a single Master architecture representing a single point of failure (SPOF); multi-master Raft consensus is on the future roadmap.",
+        "Tested primarily on single-host multi-process loopback network environments rather than geographically distributed WAN nodes.",
+        "Uses whole-chunk 3-way replication rather than erasure coding, requiring 3x raw storage capacity relative to file size.",
+      ],
+    },
+    roadmap: [
+      {
+        phase: "Phase 1 (Completed)",
+        title: "Core Master-Node Engine & TCP/UDP Network Layer",
+        description: "Implemented file chunking, TCP chunk transport, UDP heartbeat monitoring, and thread-safe Master metadata registry.",
+      },
+      {
+        phase: "Phase 2 (Completed)",
+        title: "3-Way Replication, Auto Self-Healing & CLI",
+        description: "Implemented RF = 3 replication, automated re-replication on node crash, SHA-256 verification, and CLI interface.",
+      },
+      {
+        phase: "Phase 3 (Roadmap)",
+        title: "Raft Consensus & Erasure Coding",
+        description: "Eliminate single Master SPOF via Raft consensus leader election and implement Reed-Solomon erasure coding.",
+      },
+    ],
+  },
+  {
     id: "3d-bharat",
     slug: "3d-bharat",
     title: "3D Bharat",
@@ -1026,7 +1605,7 @@ export const projectsData: Project[] = [
     repoUrl: "https://github.com/Harsha1704/3D_Bharat",
     timeline: "2024",
     featured: true,
-    order: 5,
+    order: 7,
     objectives: [
       "Preserve and showcase Indian architectural heritage through interactive 3D digital models accessible in web browsers.",
       "Enable spatial navigation across Indian states and union territories via an interactive geographic map interface.",

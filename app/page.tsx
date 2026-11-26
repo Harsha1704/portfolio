@@ -42,7 +42,7 @@ export default function HomePage() {
               className: "bg-white hover:bg-slate-50 border-slate-300 font-semibold text-slate-900 shadow-sm",
             })}
           >
-            <span>View All 5 Projects & Case Studies</span>
+            <span>View All {projectsData.length} Projects & Case Studies</span>
             <ArrowRight className="w-4 h-4 ml-2" />
           </Link>
         </div>

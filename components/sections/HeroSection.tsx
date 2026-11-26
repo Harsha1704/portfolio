@@ -217,10 +217,10 @@ export const HeroSection: React.FC = () => {
             </RevealOnScroll>
           </div>
 
-          {/* Right Column: Approved Candidate Portrait alongside introduction */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+          {/* Right Column: Approved Candidate Portrait alongside introduction in upper-right area */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end lg:self-start lg:pt-12">
             <RevealOnScroll delay={0.18} direction="left" className="w-full max-w-md">
-              <div className="relative group lg:-translate-y-[72px]">
+              <div className="relative group">
                 {/* Subtle ambient cobalt glow behind portrait */}
                 <div className="absolute -inset-1.5 bg-gradient-to-tr from-blue-600/20 via-indigo-600/15 to-blue-400/20 rounded-[28px] blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 

@@ -6,7 +6,9 @@ export type ProjectCategory =
   | "3D & Interactive Web"
   | "Computer Vision"
   | "Intelligent Systems"
-  | "Full-Stack Systems";
+  | "Full-Stack Systems"
+  | "Operating Systems / Distributed Systems"
+  | "Machine Learning / Predictive Analytics / Explainable AI";
 
 export interface ProjectTechCategory {
   category: string;

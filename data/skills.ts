@@ -15,7 +15,9 @@ export const skillClustersData: SkillCluster[] = [
         projects: [
           { slug: "trafficshield", title: "TrafficShield" },
           { slug: "resumematch-ai", title: "ResumeMatch AI" },
+          { slug: "employee-attrition-risk-prediction", title: "Employee Attrition Risk Prediction" },
           { slug: "moodmate", title: "MoodMate" },
+          { slug: "distributed-file-system", title: "Distributed File System with Fault Tolerance" },
           { slug: "satquery-ai", title: "SatQuery AI" }
         ]
       },
@@ -73,7 +75,8 @@ export const skillClustersData: SkillCluster[] = [
         keywords: ["scikit-learn", "sklearn", "logistic regression", "tfidf", "python"],
         projects: [
           { slug: "trafficshield", title: "TrafficShield" },
-          { slug: "resumematch-ai", title: "ResumeMatch AI" }
+          { slug: "resumematch-ai", title: "ResumeMatch AI" },
+          { slug: "employee-attrition-risk-prediction", title: "Employee Attrition Risk Prediction" }
         ]
       },
       {
@@ -84,7 +87,8 @@ export const skillClustersData: SkillCluster[] = [
         keywords: ["feature engineering", "preprocessing", "scaling", "nlp", "encoding"],
         projects: [
           { slug: "trafficshield", title: "TrafficShield" },
-          { slug: "resumematch-ai", title: "ResumeMatch AI" }
+          { slug: "resumematch-ai", title: "ResumeMatch AI" },
+          { slug: "employee-attrition-risk-prediction", title: "Employee Attrition Risk Prediction" }
         ]
       },
       {
@@ -106,6 +110,7 @@ export const skillClustersData: SkillCluster[] = [
         projects: [
           { slug: "trafficshield", title: "TrafficShield" },
           { slug: "resumematch-ai", title: "ResumeMatch AI" },
+          { slug: "employee-attrition-risk-prediction", title: "Employee Attrition Risk Prediction" },
           { slug: "moodmate", title: "MoodMate" }
         ]
       },
@@ -301,6 +306,7 @@ export const skillClustersData: SkillCluster[] = [
         projects: [
           { slug: "trafficshield", title: "TrafficShield" },
           { slug: "resumematch-ai", title: "ResumeMatch AI" },
+          { slug: "employee-attrition-risk-prediction", title: "Employee Attrition Risk Prediction" },
           { slug: "moodmate", title: "MoodMate" }
         ]
       },
@@ -355,8 +361,10 @@ export const skillClustersData: SkillCluster[] = [
         projects: [
           { slug: "trafficshield", title: "TrafficShield" },
           { slug: "resumematch-ai", title: "ResumeMatch AI" },
+          { slug: "employee-attrition-risk-prediction", title: "Employee Attrition Risk Prediction" },
           { slug: "3d-bharat", title: "3D Bharat" },
           { slug: "moodmate", title: "MoodMate" },
+          { slug: "distributed-file-system", title: "Distributed File System with Fault Tolerance" },
           { slug: "satquery-ai", title: "SatQuery AI" }
         ]
       },

@@ -17,8 +17,10 @@ export const ProjectsSection: React.FC = () => {
     "All",
     "Multimodal AI",
     "Applied NLP & GenAI",
+    "Machine Learning / Predictive Analytics / Explainable AI",
     "Intelligent Systems",
     "Computer Vision",
+    "Operating Systems / Distributed Systems",
     "3D & Interactive Web",
   ];
 
@@ -36,7 +38,7 @@ export const ProjectsSection: React.FC = () => {
       subtitle="Multimodal vision-language assistants, intelligent career telemetry, 3D digital heritage graphics, and affective computing systems."
     >
       {/* Category Filter Pills with Tactile Motion Feedback */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar">
+      <div className="flex flex-wrap items-center gap-2 mb-10">
         {categories.map((cat) => {
           const isSelected = activeCategory === cat;
           return (
